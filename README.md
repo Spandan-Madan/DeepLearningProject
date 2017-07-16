@@ -20,7 +20,7 @@ To make setup easy, we are going to use conda.
 - Then create a new conda environment using the command with 'conda env create -f deeplearningproject_environment.yml'
 - Now, you can activate the environment with - 'source activate deeplearningproject'
 
-If all the isntallations go through, you are good to go! If not, here is a list of packages that need to be installed: requests imDbPy wget tmdbsimple seaborn sklearn Pillow keras tensorflow h5py gensim nltk stop_words
+If all the installations go through, you are good to go! If not, here is a list of packages that need to be installed: requests imDbPy wget tmdbsimple seaborn sklearn Pillow keras tensorflow h5py gensim nltk stop_words
 
 ### Setting up conda environment in jupyter notebook
 To be able to run the environment you just created on a juputer notebook, first check that you have the python package 'ipykernel' installed. If you don't simply install it using 'pip install ipykernel'. Now, add this to your jupyter notebook using the command 'python -m ipykernel install --user --name deeplearningproject --display-name "deeplearningproject"' 
