@@ -1,10 +1,13 @@
 ![harvard-logo](http://logonoid.com/images/harvard-logo.png)
-
 # An end to end tutorial of a machine learning pipeline
 
 This tutorial tries to do what most Most Machine Learning tutorials available online do not. It is not a 30 minute tutorial which teaches you how to "Train your own neural netowrk" or "Learn deep learning in under 30 minutes". It's a full pipeline which you would need to do if you actually work with machine learning - introducing you to all the parts, and all the implementation decisions and details that need to be made. The dataset is not one of the standard sets like MNIST or CIFAR, you will make you very own dataset. Then you will go through a couple conventional machine learning algorithms, before finally getting to deep learning!
 
 In the fall of 2016, I was a Teaching Fellow (Harvard's version of TA) for the graduate class on "Advanced Topics in Data Science (CS209/109)" at Harvard University. I was in-charge of designing the class project given to the students, and this tutorial has been built on top of the project I designed for the class.
+
+# Citing if you use the work here
+If you would like to use this work, please cite the work using the doi - 
+[![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.830003.svg)](http://dx.doi.org/10.5281/zenodo.830003)
 
 # Reading/Viewing the Tutorial
 To view the project as an HTML file, visit - https://spandan-madan.github.io/DeepLearningProject/
