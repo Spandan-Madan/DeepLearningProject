@@ -1,4 +1,4 @@
-![mit-logo](http://people.csail.mit.edu/yueli/mit_logo.jpg)
+![harvard-logo](http://logonoid.com/images/harvard-logo.png)
 
 # An end to end tutorial of a machine learning pipeline
 
