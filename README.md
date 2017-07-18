@@ -1,7 +1,7 @@
 ![harvard-logo](http://logonoid.com/images/harvard-logo.png)
 # An end to end tutorial of a machine learning pipeline
 
-This tutorial tries to do what most Most Machine Learning tutorials available online do not. It is not a 30 minute tutorial which teaches you how to "Train your own neural netowrk" or "Learn deep learning in under 30 minutes". It's a full pipeline which you would need to do if you actually work with machine learning - introducing you to all the parts, and all the implementation decisions and details that need to be made. The dataset is not one of the standard sets like MNIST or CIFAR, you will make you very own dataset. Then you will go through a couple conventional machine learning algorithms, before finally getting to deep learning!
+This tutorial tries to do what most Most Machine Learning tutorials available online do not. It is not a 30 minute tutorial which teaches you how to "Train your own neural network" or "Learn deep learning in under 30 minutes". It's a full pipeline which you would need to do if you actually work with machine learning - introducing you to all the parts, and all the implementation decisions and details that need to be made. The dataset is not one of the standard sets like MNIST or CIFAR, you will make you very own dataset. Then you will go through a couple conventional machine learning algorithms, before finally getting to deep learning!
 
 In the fall of 2016, I was a Teaching Fellow (Harvard's version of TA) for the graduate class on "Advanced Topics in Data Science (CS209/109)" at Harvard University. I was in-charge of designing the class project given to the students, and this tutorial has been built on top of the project I designed for the class.
 
@@ -23,10 +23,10 @@ To make setup easy, we are going to use conda.
 - Then create a new conda environment using the command with 'conda env create -f deeplearningproject_environment.yml'
 - Now, you can activate the environment with - 'source activate deeplearningproject'
 
-If all the isntallations go through, you are good to go! If not, here is a list of packages that need to be installed: requests imDbPy wget tmdbsimple seaborn sklearn Pillow keras tensorflow h5py gensim nltk stop_words
+If all the installations go through, you are good to go! If not, here is a list of packages that need to be installed: requests imDbPy wget tmdbsimple seaborn sklearn Pillow keras tensorflow h5py gensim nltk stop_words
 
 ### Setting up conda environment in jupyter notebook
-To be able to run the environment you just created on a juputer notebook, first check that you have the python package 'ipykernel' installed. If you don't simply install it using 'pip install ipykernel'. Now, add this to your jupyter notebook using the command 'python -m ipykernel install --user --name deeplearningproject --display-name "deeplearningproject"' 
+To be able to run the environment you just created on a jupyter notebook, first check that you have the python package 'ipykernel' installed. If you don't simply install it using 'pip install ipykernel'. Now, add this to your jupyter notebook using the command 'python -m ipykernel install --user --name deeplearningproject --display-name "deeplearningproject"' 
 
 Needless to say, remove all single quotes before running commands
 
