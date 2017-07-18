@@ -8451,15 +8451,15 @@ label {
 }
 /* Flexible box model classes */
 /* Taken from Alex Russell http://infrequently.org/2009/08/css-3-progress/ */
-/* This file is a compatability layer.  It allows the usage of flexible box 
+/* This file is a compatability layer.  It allows the usage of flexible box
 model layouts accross multiple browsers, including older browsers.  The newest,
 universal implementation of the flexible box model is used when available (see
-`Modern browsers` comments below).  Browsers that are known to implement this 
+`Modern browsers` comments below).  Browsers that are known to implement this
 new spec completely include:
 
     Firefox 28.0+
     Chrome 29.0+
-    Internet Explorer 11+ 
+    Internet Explorer 11+
     Opera 17.0+
 
 Browsers not listed, including Safari, are supported via the styling under the
@@ -11233,7 +11233,7 @@ div#pager .ui-resizable-handle {
   background: #f7f7f7;
   border-top: 1px solid #cfcfcf;
   border-bottom: 1px solid #cfcfcf;
-  /* This injects handle bars (a short, wide = symbol) for 
+  /* This injects handle bars (a short, wide = symbol) for
         the resize handle. */
 }
 div#pager .ui-resizable-handle::after {
@@ -11676,7 +11676,7 @@ ul.typeahead-list > li > a {
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
 <style type="text/css">
-    
+
 /* Temporary definitions which will become obsolete with Notebook release 5.0 */
 .ansi-black-fg { color: #3E424D; }
 .ansi-black-bg { background-color: #3E424D; }
@@ -11732,14 +11732,14 @@ div#notebook {
   div.cell {
     display: block;
     page-break-inside: avoid;
-  } 
-  div.output_wrapper { 
-    display: block;
-    page-break-inside: avoid; 
   }
-  div.output { 
+  div.output_wrapper {
     display: block;
-    page-break-inside: avoid; 
+    page-break-inside: avoid;
+  }
+  div.output {
+    display: block;
+    page-break-inside: avoid;
   }
 }
 </style>
@@ -11878,7 +11878,7 @@ div#notebook {
 <h1 id="Project-Outline">Project Outline<a class="anchor-link" href="#Project-Outline">&#182;</a></h1><ul>
 <li><strong>Scraping a dataset</strong> : The first step is to build a rich data set. We will collect textual and visual data for each movie.</li>
 <li><strong>Data pre-processing</strong></li>
-<li><strong>Non-deep Machine Learning models&lt;/b&gt; : Probabilistic and Max-Margin Classifiers.</strong></li>
+<li><strong>Non-deep Machine Learning models</strong> : Probabilistic and Max-Margin Classifiers.</li>
 <li><strong>Intuitive theory behind Deep Learning</strong></li>
 <li><strong>Deep Models for Visual Data</strong></li>
 <li><strong>Deep Models for Text</strong></li>
@@ -12067,7 +12067,7 @@ except:
 <pre><code>url = 'https://api.themoviedb.org/3/movie/1581?api_key=' + api_key
 data = urllib2.urlopen(url).read()
 
-# create dictionary from JSON 
+# create dictionary from JSON
 dataDict = json.loads(data)</code></pre>
 
 </div>
@@ -12650,7 +12650,7 @@ The genres for The Matrix pulled from TMDB are - [{u&#39;id&#39;: 28, u&#39;name
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Here is all the information you can get on this movie - 
+<pre>Here is all the information you can get on this movie -
 {u&#39;poster_path&#39;: u&#39;/tWqifoYuwLETmmasnGHO7xBjEtt.jpg&#39;, u&#39;title&#39;: u&#39;Beauty and the Beast&#39;, u&#39;overview&#39;: u&#34;A live-action adaptation of Disney&#39;s version of the classic &#39;Beauty and the Beast&#39; tale of a cursed prince and a beautiful young woman who helps him break the spell.&#34;, u&#39;release_date&#39;: u&#39;2017-03-16&#39;, u&#39;popularity&#39;: 236.720585, u&#39;original_title&#39;: u&#39;Beauty and the Beast&#39;, u&#39;backdrop_path&#39;: u&#39;/6aUWe0GSl69wMTSWWexsorMIvwU.jpg&#39;, u&#39;vote_count&#39;: 3801, u&#39;video&#39;: False, u&#39;adult&#39;: False, u&#39;vote_average&#39;: 6.8, u&#39;genre_ids&#39;: [10751, 14, 10749], u&#39;id&#39;: 321612, u&#39;original_language&#39;: u&#39;en&#39;}
 
 
@@ -13021,7 +13021,7 @@ Logan [u&#39;Action&#39;, u&#39;Drama&#39;, u&#39;Science Fiction&#39;]
 <span class="n">allPairs</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">movie</span> <span class="ow">in</span> <span class="n">top1000_movies</span><span class="p">:</span>
     <span class="n">allPairs</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">list2pairs</span><span class="p">(</span><span class="n">movie</span><span class="p">[</span><span class="s1">&#39;genre_ids&#39;</span><span class="p">]))</span>
-    
+
 <span class="n">nr_ids</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">allPairs</span><span class="p">)</span>
 <span class="n">visGrid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">nr_ids</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">nr_ids</span><span class="p">)))</span>
 <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">allPairs</span><span class="p">:</span>
@@ -13577,7 +13577,7 @@ AAAASUVORK5CYII=
 <span class="n">annot_lookup_sorted</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">row_labels_</span><span class="p">):</span>
     <span class="n">annot_lookup_sorted</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Genre_ID_to_name</span><span class="p">[</span><span class="n">nr_ids</span><span class="p">[</span><span class="n">i</span><span class="p">]])</span>
-    
+
 <span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">fit_data</span><span class="p">,</span> <span class="n">xticklabels</span><span class="o">=</span><span class="n">annot_lookup_sorted</span><span class="p">,</span> <span class="n">yticklabels</span><span class="o">=</span><span class="n">annot_lookup_sorted</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;After biclustering; rearranged to show biclusters&quot;</span><span class="p">)</span>
 
@@ -14039,7 +14039,7 @@ GRo5JpTJZDKZoZGNUCaTyWSGRjZCmUwmkxka2QhlMplMZmj8P9lnC3dnQTSyAAAAAElFTkSuQmCC
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Looking at the above figure, "boxes" or groups of movie genres automatically emerge!</p>
-<p>Intuitively - Crime, Sci-Fi, Mystery, Action, Horror, Drama, Thriller, etc co-occur. 
+<p>Intuitively - Crime, Sci-Fi, Mystery, Action, Horror, Drama, Thriller, etc co-occur.
 AND, Romance, Fantasy, Family, Music, Adventure, etc co-occur.</p>
 <p>That makes a lot of intuitive sense, right?</p>
 <p>One challenge is the broad range of the drama genre. It makes the two clusters highly overlapping. If we merge it together with action thriller, etc. We will end up with nearly all movies just having that label.</p>
@@ -14110,9 +14110,9 @@ AND, Romance, Fantasy, Family, Music, Adventure, etc co-occur.</p>
     <span class="n">baseyear</span> <span class="o">-=</span> <span class="mi">1</span>
     <span class="k">for</span> <span class="n">page</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
         <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
-    
+
         <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://api.themoviedb.org/3/discover/movie?api_key=&#39;</span> <span class="o">+</span> <span class="n">api_key</span>
-        <span class="n">url</span> <span class="o">+=</span> <span class="s1">&#39;&amp;language=en-US&amp;sort_by=popularity.desc&amp;year=&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">baseyear</span><span class="p">)</span> 
+        <span class="n">url</span> <span class="o">+=</span> <span class="s1">&#39;&amp;language=en-US&amp;sort_by=popularity.desc&amp;year=&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">baseyear</span><span class="p">)</span>
         <span class="n">url</span> <span class="o">+=</span> <span class="s1">&#39;&amp;with_genres=&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">g_id</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;&amp;page=&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">page</span><span class="p">)</span>
 
         <span class="n">data</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
@@ -14535,12 +14535,12 @@ Done with all the posters!
     <span class="n">movie</span><span class="o">=</span><span class="n">no_duplicate_movies</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
     <span class="nb">id</span><span class="o">=</span><span class="n">movie</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span>
     <span class="n">overview</span><span class="o">=</span><span class="n">movie</span><span class="p">[</span><span class="s1">&#39;overview&#39;</span><span class="p">]</span>
-    
+
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">overview</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
         <span class="k">continue</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">movies_with_overviews</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">movie</span><span class="p">)</span>
-        
+
 <span class="nb">len</span><span class="p">(</span><span class="n">movies_with_overviews</span><span class="p">)</span>
 </pre></div>
 
@@ -14871,7 +14871,7 @@ Done with all the posters!
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The overview for the movie Doctor Strange  is - 
+<pre>The overview for the movie Doctor Strange  is -
 
 
 After his career is destroyed, a brilliant but arrogant surgeon gets a new lease on life when a sorcerer takes him under his wing and trains him to defend the world against evil.
@@ -16167,7 +16167,7 @@ MOVIE:  Patema Inverted 	PREDICTION:  Documentary,Music
         <span class="k">except</span><span class="p">:</span>
             <span class="n">failed_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">imname</span><span class="p">)</span>
             <span class="k">continue</span>
-        
+
     <span class="k">else</span><span class="p">:</span>
         <span class="k">continue</span>
 <span class="k">print</span> <span class="s2">&quot;Done with all features, please pickle for future use!&quot;</span>
@@ -16269,7 +16269,7 @@ Done with all features, please pickle for future use!
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span> 
+<div class=" highlight hl-ipython2"><pre><span></span>
 </pre></div>
 
 </div>
@@ -16757,25 +16757,25 @@ Done with all features, please pickle for future use!
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Epoch 1/10
-1053/1053 [==============================] - 7s - loss: 2.3120 - acc: 0.8160     
+1053/1053 [==============================] - 7s - loss: 2.3120 - acc: 0.8160
 Epoch 2/10
-1053/1053 [==============================] - 6s - loss: 1.6045 - acc: 0.8724     
+1053/1053 [==============================] - 6s - loss: 1.6045 - acc: 0.8724
 Epoch 3/10
-1053/1053 [==============================] - 7s - loss: 1.1555 - acc: 0.9078     
+1053/1053 [==============================] - 7s - loss: 1.1555 - acc: 0.9078
 Epoch 4/10
-1053/1053 [==============================] - 7s - loss: 0.9149 - acc: 0.9264     
+1053/1053 [==============================] - 7s - loss: 0.9149 - acc: 0.9264
 Epoch 5/10
-1053/1053 [==============================] - 6s - loss: 0.7455 - acc: 0.9420     
+1053/1053 [==============================] - 6s - loss: 0.7455 - acc: 0.9420
 Epoch 6/10
-1053/1053 [==============================] - 6s - loss: 0.6218 - acc: 0.9522     
+1053/1053 [==============================] - 6s - loss: 0.6218 - acc: 0.9522
 Epoch 7/10
-1053/1053 [==============================] - 7s - loss: 0.5393 - acc: 0.9623     
+1053/1053 [==============================] - 7s - loss: 0.5393 - acc: 0.9623
 Epoch 8/10
-1053/1053 [==============================] - 7s - loss: 0.5104 - acc: 0.9645     
+1053/1053 [==============================] - 7s - loss: 0.5104 - acc: 0.9645
 Epoch 9/10
-1053/1053 [==============================] - 6s - loss: 0.4923 - acc: 0.9644     
+1053/1053 [==============================] - 6s - loss: 0.4923 - acc: 0.9644
 Epoch 10/10
-1053/1053 [==============================] - 6s - loss: 0.4475 - acc: 0.9648     
+1053/1053 [==============================] - 6s - loss: 0.4475 - acc: 0.9648
 </pre>
 </div>
 </div>
@@ -17304,7 +17304,7 @@ Download it to the directory of this tutorial i.e. in the same folder as this ip
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Why do we take the arithmetic mean?</strong>
-If you feel that we should have kept all the words separately - Then you're thinking correct, but sadly we're limited by the way current day neural networks work. I will not mull over this for the fear of stressing too much on an otherwise irrelevant detail. But if you're interested, read this awesome paper - 
+If you feel that we should have kept all the words separately - Then you're thinking correct, but sadly we're limited by the way current day neural networks work. I will not mull over this for the fear of stressing too much on an otherwise irrelevant detail. But if you're interested, read this awesome paper -
 <a href="https://jiajunwu.com/papers/dmil_cvpr.pdf">https://jiajunwu.com/papers/dmil_cvpr.pdf</a></p>
 
 </div>
@@ -17386,7 +17386,7 @@ If you feel that we should have kept all the words separately - Then you're thin
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span> 
+<div class=" highlight hl-ipython2"><pre><span></span>
 </pre></div>
 
 </div>
@@ -17692,25 +17692,25 @@ If you feel that we should have kept all the words separately - Then you're thin
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Epoch 1/10
-982/982 [==============================] - 0s - loss: 0.4819 - acc: 0.8520     
+982/982 [==============================] - 0s - loss: 0.4819 - acc: 0.8520
 Epoch 2/10
-982/982 [==============================] - 0s - loss: 0.4642 - acc: 0.8520     
+982/982 [==============================] - 0s - loss: 0.4642 - acc: 0.8520
 Epoch 3/10
-982/982 [==============================] - 0s - loss: 0.4527 - acc: 0.8520     
+982/982 [==============================] - 0s - loss: 0.4527 - acc: 0.8520
 Epoch 4/10
-982/982 [==============================] - 0s - loss: 0.4456 - acc: 0.8520     
+982/982 [==============================] - 0s - loss: 0.4456 - acc: 0.8520
 Epoch 5/10
-982/982 [==============================] - 0s - loss: 0.4407 - acc: 0.8520     
+982/982 [==============================] - 0s - loss: 0.4407 - acc: 0.8520
 Epoch 6/10
-982/982 [==============================] - 0s - loss: 0.4367 - acc: 0.8520     
+982/982 [==============================] - 0s - loss: 0.4367 - acc: 0.8520
 Epoch 7/10
-982/982 [==============================] - 0s - loss: 0.4332 - acc: 0.8520     
+982/982 [==============================] - 0s - loss: 0.4332 - acc: 0.8520
 Epoch 8/10
-982/982 [==============================] - 0s - loss: 0.4295 - acc: 0.8520     
+982/982 [==============================] - 0s - loss: 0.4295 - acc: 0.8520
 Epoch 9/10
-982/982 [==============================] - 0s - loss: 0.4260 - acc: 0.8520     
+982/982 [==============================] - 0s - loss: 0.4260 - acc: 0.8520
 Epoch 10/10
-982/982 [==============================] - 0s - loss: 0.4227 - acc: 0.8520     
+982/982 [==============================] - 0s - loss: 0.4227 - acc: 0.8520
 </pre>
 </div>
 </div>
@@ -17882,7 +17882,7 @@ Epoch 10/10
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Our predictions for the movies are - 
+<pre>Our predictions for the movies are -
 
 Predicted:  [u&#39;Science Fiction&#39;, u&#39;Action&#39;, u&#39;Adventure&#39;]  Actual:  [u&#39;Adventure&#39;, u&#39;Action&#39;, u&#39;Comedy&#39;, u&#39;Romance&#39;]
 Predicted:  [u&#39;Thriller&#39;, u&#39;Crime&#39;, u&#39;Mystery&#39;]  Actual:  [u&#39;Drama&#39;, u&#39;Thriller&#39;, u&#39;Science Fiction&#39;]
@@ -17955,7 +17955,7 @@ Predicted:  [u&#39;Drama&#39;, u&#39;Thriller&#39;, u&#39;Mystery&#39;]  Actual:
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span> 
+<div class=" highlight hl-ipython2"><pre><span></span>
 </pre></div>
 
 </div>
@@ -17967,7 +17967,7 @@ Predicted:  [u&#39;Drama&#39;, u&#39;Thriller&#39;, u&#39;Mystery&#39;]  Actual:
   </div>
 </body>
 
- 
+
 
 
 </html>
