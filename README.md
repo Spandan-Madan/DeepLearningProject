@@ -17,6 +17,9 @@ If you would like to access to Code, please go through the ipython notebook 'Dee
 
 # SETUP
 
+Python 
+- We will be using Python 2.7. Primary reason is that Tensorflow is not compatible with python > 3.5, and some other libraries are not compatible with python 3.
+
 To make setup easy, we are going to use conda. 
 - Please install conda 3 from https://www.continuum.io/downloads
 - The repository has a conda config file which will make setting up super easy. It's the file 'deeplearningproject_environment.yml'
