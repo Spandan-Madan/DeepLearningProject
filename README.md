@@ -30,6 +30,25 @@ To be able to run the environment you just created on a juputer notebook, first 
 
 Needless to say, remove all single quotes before running commands
 
+### Setup steps for Ubuntu 14
+
+  - Run the downloaded script to install Anaconda
+  ```sh
+  chmod +x Anaconda2-4.4.0-Linux-x86_64.sh
+  ./Anaconda2-4.4.0-Linux-x86_64.sh
+  ```
+  - Create conda environment
+  ```sh
+  conda env create -f deeplearningproject_environment.yml
+  source activate deeplearningproj
+  ```
+  - Setup notebook and launch
+  ```sh
+  conda install notebook ipykernel
+  ipython kernel install --user
+  jupyter notebook Deep_Learning_Project.ipynb
+  ```
+
 # Known common bugs
 I will keep updating this as issues pop up on this repository. 
 
