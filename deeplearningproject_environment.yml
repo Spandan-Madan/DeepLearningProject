@@ -2,7 +2,6 @@ name: deeplearningproject
 channels:
 - defaults
 dependencies:
-- appnope=0.1.0=py27_0
 - backports=1.0=py27_0
 - backports_abc=0.5=py27_0
 - decorator=4.0.11=py27_0
