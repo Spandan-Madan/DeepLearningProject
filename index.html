@@ -8451,15 +8451,15 @@ label {
 }
 /* Flexible box model classes */
 /* Taken from Alex Russell http://infrequently.org/2009/08/css-3-progress/ */
-/* This file is a compatability layer.  It allows the usage of flexible box 
+/* This file is a compatability layer.  It allows the usage of flexible box
 model layouts accross multiple browsers, including older browsers.  The newest,
 universal implementation of the flexible box model is used when available (see
-`Modern browsers` comments below).  Browsers that are known to implement this 
+`Modern browsers` comments below).  Browsers that are known to implement this
 new spec completely include:
 
     Firefox 28.0+
     Chrome 29.0+
-    Internet Explorer 11+ 
+    Internet Explorer 11+
     Opera 17.0+
 
 Browsers not listed, including Safari, are supported via the styling under the
@@ -11233,7 +11233,7 @@ div#pager .ui-resizable-handle {
   background: #f7f7f7;
   border-top: 1px solid #cfcfcf;
   border-bottom: 1px solid #cfcfcf;
-  /* This injects handle bars (a short, wide = symbol) for 
+  /* This injects handle bars (a short, wide = symbol) for
         the resize handle. */
 }
 div#pager .ui-resizable-handle::after {
@@ -11676,7 +11676,7 @@ ul.typeahead-list > li > a {
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
 <style type="text/css">
-    
+
 /* Temporary definitions which will become obsolete with Notebook release 5.0 */
 .ansi-black-fg { color: #3E424D; }
 .ansi-black-bg { background-color: #3E424D; }
@@ -11732,14 +11732,14 @@ div#notebook {
   div.cell {
     display: block;
     page-break-inside: avoid;
-  } 
-  div.output_wrapper { 
-    display: block;
-    page-break-inside: avoid; 
   }
-  div.output { 
+  div.output_wrapper {
     display: block;
-    page-break-inside: avoid; 
+    page-break-inside: avoid;
+  }
+  div.output {
+    display: block;
+    page-break-inside: avoid;
   }
 }
 </style>
@@ -11800,10 +11800,10 @@ div#notebook {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Section-1.-Introduction">Section 1. Introduction<a class="anchor-link" href="#Section-1.-Introduction">&#182;</a></h1><h3 id="Background">Background<a class="anchor-link" href="#Background">&#182;</a></h3><p>In the fall of 2016, I was a Teaching Fellow (Harvard's version of TA) for the graduate class on "Advanced Topics in Data Science (CS209/109)" at Harvard University. I was in-charge of designing the class project given to the students, and this tutorial has been built on top of the project I designed for the class.</p>
-<h3 id="Why-write-yet-another-Tutorial-on-Machine-Learning-and-Deep-Learning?">Why write yet another Tutorial on Machine Learning and Deep Learning?<a class="anchor-link" href="#Why-write-yet-another-Tutorial-on-Machine-Learning-and-Deep-Learning?">&#182;</a></h3><p>As a researcher on Computer Vision, I come across new blogs and tutorials on ML (Machine Learning) every day. However, most of them are just focussing on introducing the syntax and the terminology relavant to the field. For example - a 15 minute tutorial on Tensorflow using MNIST dataset, or a 10 minute intro to Deep Learning in Keras on Imagenet.</p>
+<h3 id="Why-write-yet-another-Tutorial-on-Machine-Learning-and-Deep-Learning?">Why write yet another Tutorial on Machine Learning and Deep Learning?<a class="anchor-link" href="#Why-write-yet-another-Tutorial-on-Machine-Learning-and-Deep-Learning?">&#182;</a></h3><p>As a researcher on Computer Vision, I come across new blogs and tutorials on ML (Machine Learning) every day. However, most of them are just focusing on introducing the syntax and the terminology relevant to the field. For example - a 15 minute tutorial on Tensorflow using MNIST dataset, or a 10 minute intro to Deep Learning in Keras on Imagenet.</p>
 <p>While people are able to copy paste and run the code in these tutorials and feel that working in ML is really not that hard, it doesn't help them at all in using ML for their own purposes. For example, they never introduce you to how you can run the same algorithm on your own dataset. Or, how do you get the dataset if you want to solve a problem. Or, which algorithms do you use - Conventional ML, or Deep Learning? How do you evaluate your models performance? How do you write your own model, as opposed to choosing a ready made architecture? All these form fundamental steps in any Machine Learning pipeline, and it is these steps that take most of our time as ML practitioners.</p>
 <p>This tutorial breaks down the whole pipeline, and leads the reader through it step by step in an hope to empower you to actually use ML, and not just feel that it was not too hard. Needless to say, this will take much longer than 15-30 minutes. I believe a weekend would be a good enough estimate.</p>
-<h3 id="About-the-Author">About the Author<a class="anchor-link" href="#About-the-Author">&#182;</a></h3><p>I am <a href="http://spandanmadan.com/">Spandan Madan</a>, a graduate student at Harvard University working on Computer Vision. My research work is supervised collaboratively by Professor Hanspeter Pfister at Harvard, and Professor Aude Oliva at MIT. My current research focusses on using Computer Vision and Natural Language Techniques in tandem to build systems capable of reasoning using text and visual elements simultaneusly.</p>
+<h3 id="About-the-Author">About the Author<a class="anchor-link" href="#About-the-Author">&#182;</a></h3><p>I am <a href="http://spandanmadan.com/">Spandan Madan</a>, a graduate student at Harvard University working on Computer Vision. My research work is supervised collaboratively by Professor Hanspeter Pfister at Harvard, and Professor Aude Oliva at MIT. My current research focuses on using Computer Vision and Natural Language Techniques in tandem to build systems capable of reasoning using text and visual elements simultaneously.</p>
 
 </div>
 </div>
@@ -11822,7 +11822,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Wow,-that-title-sounds-like-a-handful,-right?-Let's-break-it-down-step-by-step.">Wow, that title sounds like a handful, right? Let's break it down step by step.<a class="anchor-link" href="#Wow,-that-title-sounds-like-a-handful,-right?-Let's-break-it-down-step-by-step.">&#182;</a></h2><h3 id="Q.1.-what-do-we-mean-by-Classification?">Q.1. what do we mean by Classification?<a class="anchor-link" href="#Q.1.-what-do-we-mean-by-Classification?">&#182;</a></h3><p>In machine learning, the task of classification means to use the available data to learn a <i>function</i> which can assign a category to a data point. For example, assign a genre to a movie, like "Romantic Comedy", "Action", "Thriller". Another example could be automatically assigning a category to news articles, like "Sports" and "Politics".</p>
+<h2 id="Wow,-that-title-sounds-like-a-handful,-right?-Let's-break-it-down-step-by-step.">Wow, that title sounds like a handful, right? Let's break it down step by step.<a class="anchor-link" href="#Wow,-that-title-sounds-like-a-handful,-right?-Let's-break-it-down-step-by-step.">&#182;</a></h2><h3 id="Q.1.-what-do-we-mean-by-Classification?">Q.1. What do we mean by Classification?<a class="anchor-link" href="#Q.1.-what-do-we-mean-by-Classification?">&#182;</a></h3><p>In machine learning, the task of classification means to use the available data to learn a <i>function</i> which can assign a category to a data point. For example, assign a genre to a movie, like "Romantic Comedy", "Action", "Thriller". Another example could be automatically assigning a category to news articles, like "Sports" and "Politics".</p>
 <h3 id="More-Formally">More Formally<a class="anchor-link" href="#More-Formally">&#182;</a></h3><h4 id="Given:">Given:<a class="anchor-link" href="#Given:">&#182;</a></h4><ul>
 <li>A data point $x_i$ </li>
 <li>A set of categories $y_1,y_2...y_n$ that $x_i$ can belong to. <br></li>
@@ -11838,7 +11838,7 @@ div#notebook {
 </li>
 <li><p>We will look into generalization a little bit more a little ahead in the tutorial.</p>
 </li>
-<li><p>Finally, There are several other kinds, but supervised learning is the most popular and well studied kind.</p>
+<li><p>Finally, there are several other kinds, but supervised learning is the most popular and well studied kind.</p>
 </li>
 </ul>
 
@@ -11856,7 +11856,7 @@ div#notebook {
 <li>The audio clip of what's being spoken (audio modality)</li>
 <li>Some videos also come with the transcription of the words spoken in the form of subtitles (textual modality)</li>
 </ul>
-<p>Consider, that I'm interested in classifying a song on YouTube as pop or rock. You can use any of the above 3 modalities to predict the genre - The video, the song itself, or the lyrics. But, needless to say, you can predict it much better if you could use all three simultaneously. This is what we mean by multi-modal classification.</p>
+<p>Consider that I'm interested in classifying a song on YouTube as pop or rock. You can use any of the above 3 modalities to predict the genre - The video, the song itself, or the lyrics. But, needless to say, you can predict it much better if you could use all three simultaneously. This is what we mean by multi-modal classification.</p>
 
 </div>
 </div>
@@ -11894,7 +11894,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Section-3.-Building-your-very-own-DataSet.">Section 3. Building your very own DataSet.<a class="anchor-link" href="#Section-3.-Building-your-very-own-DataSet.">&#182;</a></h1>
+<h1 id="Section-3.-Building-your-very-own-dataset.">Section 3. Building your very own dataset.<a class="anchor-link" href="#Section-3.-Building-your-very-own-dataset.">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -11906,7 +11906,7 @@ div#notebook {
 <p>For any machine learning algorithm to work, it is imperative that we collect data which is "representative". Now, let's take a moment to discuss what the word representative mean.</p>
 <h3 id="What-data-is-good-data?-OR-What-do-you-mean-by-data-being-&quot;representative&quot;?">What data is good data? OR What do you mean by data being "representative"?<a class="anchor-link" href="#What-data-is-good-data?-OR-What-do-you-mean-by-data-being-&quot;representative&quot;?">&#182;</a></h3><p>Let's look at this from first principles. Mathematically, the premise of machine learning (to be precise, the strand of machine learning we'll be working with here) is that given input variable X, and an output variable y, <strong>IF</strong> there is a function such that g(X)=y, then if g is unknown, we can "learn" a function f which approximates g. At the very heart, its not at all different from what you may have earlier studied as "curve fitting". For example, if you're trying to predict someone's movie preferences then X can be information about the person's gender, age, nationality and so on, while y can be the genre they most like to listen to!</p>
 <p>Let's do a thought experiment. Consider the same example - I'm trying to predict people's movie preferences. I walk into a classroom today, and collect information about some students and their movie preferences. Now, I use that data to build a model. How well do you think I can predict my father's movie preferences? The answer is - probably not very well. Why? Intuitively, there was probably no one in the classroom who was my father's age. My model can tell me that as people go from age 18 to 30, they have a higher preference for documentaries over superhero movies. But does this trend continue at 55? Probably, they may start liking family dramas more. Probably they don't. In a nutshell, we cannot say with certainty, as our data tells us nothing about it. So, if the task was to make predictions about ANYONE's movie preferences, then the data collected from just undergraduates is NOT representative.</p>
-<p>Now, let's see why this makes sense Mathematically. Look at the graph below.</p>
+<p>Now, let's see why this makes sense mathematically. Look at the graph below.</p>
 
 </div>
 </div>
@@ -11917,7 +11917,7 @@ div#notebook {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><img src="contour.png"></p>
-<center>Fig.1: Plot of a function we are trying to approximate(<a href="http://www.jzy3d.org/js/slider/images/ContourPlotsDemo.png">source</a>)</center>
+<center>Fig.1: Plot of a function we are trying to approximate (<a href="http://www.jzy3d.org/js/slider/images/ContourPlotsDemo.png">source</a>)</center>
 </div>
 </div>
 </div>
@@ -11926,7 +11926,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>If we consider that the variable plotted on the vertical axis is $y$, and the values of the 2 variables on the horizontal axes make the input vector $X$, then, our hope is that we are able to find a function $f$ which can approximate the function plotted here. If all the data I collect is such that $x_1$ belongs to (80,100) and $x_2$ belongs to (80,100), the learned function will only be able to learn the "yellow-green dipping bellow" part of the function.  Our function will never be able to predict the behavior in the "red" regions of the true function. So, in order to be able to learn a good function, we need data sampled from a diverse set of values of $x_1$ and x2. That would be representative data to learn this contour.</p>
+<p>If we consider that the variable plotted on the vertical axis is $y$, and the values of the 2 variables on the horizontal axes make the input vector $X$, then, our hope is that we are able to find a function $f$ which can approximate the function plotted here. If all the data I collect is such that $x_1$ belongs to (80,100) and $x_2$ belongs to (80,100), the learned function will only be able to learn the "yellow-green dipping below" part of the function.  Our function will never be able to predict the behavior in the "red" regions of the true function. So, in order to be able to learn a good function, we need data sampled from a diverse set of values of $x_1$ and x2. That would be representative data to learn this contour.</p>
 
 </div>
 </div>
@@ -11937,7 +11937,7 @@ div#notebook {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Therefore, we want to collect data which is representative of all possible movies that we want to make predictions about. Or else (which is often the case), we need to be aware of the limitations of the model we have trained, and the predictions we can make with confidence. The easiest way to do this is to only make predictions about the domain of data we collected the training data from. For example, in our case, let us start by assuming that our model will predict genres for only English movies. Now, the task is to collect data about a diverse collection of movies.</p>
-<p>So how do we get this data then? Neither google, nor any university has released such a dataset. We want to collect visual and textual data about these movies. The simple answer is to scrape it from the internet to build our own dataset. For the purpose of this project, we will use movie posters as our visual data, and movie plots as textual data. Using these, we will build a model that can predict movie genres!</p>
+<p>So how do we get this data then? Neither Google, nor any university has released such a dataset. We want to collect visual and textual data about these movies. The simple answer is to scrape it from the internet to build our own dataset. For the purpose of this project, we will use movie posters as our visual data, and movie plots as textual data. Using these, we will build a model that can predict movie genres!</p>
 
 </div>
 </div>
@@ -11947,7 +11947,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="We-will-be-scraping-data-from-2-different-movie-sources---IMDB-and-TMDB">We will be scraping data from 2 different movie sources - IMDB and TMDB<a class="anchor-link" href="#We-will-be-scraping-data-from-2-different-movie-sources---IMDB-and-TMDB">&#182;</a></h1>
+<h1 id="We-will-be-scraping-data-from-2-different-movie-sources---IMDb-and-TMDb">We will be scraping data from 2 different movie sources - IMDb and TMDb<a class="anchor-link" href="#We-will-be-scraping-data-from-2-different-movie-sources---IMDb-and-TMDb">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -11956,8 +11956,8 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3>IMDB:http://www.imdb.com/</h3><p>For those unaware, IMDB is the primary source of information about movies on the internet. It is immensely rich with posters, reviews, synopsis, ratings and many other information on every movie. We will use this as our primary data source.</p>
-<h3>TMDB:https://www.themoviedb.org/</h3><p>TMDB, or The Movie DataBase, is an open source version of IMDB, with a free to use API that can be used to collect information. You do need an API key, but it can be obtained for free by just making a request after making a free account.</p>
+<h3>IMDb: http://www.imdb.com/</h3><p>For those unaware, IMDb is the primary source of information about movies on the internet. It is immensely rich with posters, reviews, synopsis, ratings and many other details on nearly every movie. We will use this as our primary data source.</p>
+<h3>TMDb: https://www.themoviedb.org/</h3><p>TMDb, or The Movie Database, is an open source version of IMDb, with a free to use API that can be used to collect information. You do need an API key, but it can be obtained for free by just making a request after making a free account.</p>
 
 </div>
 </div>
@@ -11967,7 +11967,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Note--">Note -<a class="anchor-link" href="#Note--">&#182;</a></h4><p>IMDB gives some information for free through the API, but doesn't release other information about movies. Here, we will keep it legal and only use information given to us for free and legally. However, scraping does reside on the moral fence, so to say. People often scrape data which isn't exactly publicly available for use from websites.</p>
+<h4 id="Note--">Note: <a class="anchor-link" href="#Note--">&#182;</a></h4><p>IMDb gives some information for free through the API, but doesn't release other information about movies. Here, we will keep it legal and only use information given to us for free and legally. However, scraping does reside on the moral fence, so to say. People often scrape data which isn't exactly publicly available for use from websites.</p>
 
 </div>
 </div>
@@ -12006,7 +12006,7 @@ div#notebook {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Here-is-a-broad-outline-of-technical-steps-to-be-done-for-data-collection">Here is a broad outline of technical steps to be done for data collection<a class="anchor-link" href="#Here-is-a-broad-outline-of-technical-steps-to-be-done-for-data-collection">&#182;</a></h1><ul>
-<li>Sign up for TMDB (themoviedatabase.org), and set up API to scrape movie posters for above movies.</li>
+<li>Sign up for TMDb (themoviedatabase.org), and set up API to scrape movie posters for above movies.</li>
 <li>Set up and work with TMDb to get movie information from their database</li>
 <li>Do the same for IMDb</li>
 <li>Compare the entries of IMDb and TMDb for a movie</li>
@@ -12024,16 +12024,16 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Signing-up-for-TMDB-and-getting-set-up-for-getting-movie-metadata.">Signing up for TMDB and getting set up for getting movie metadata.<a class="anchor-link" href="#Signing-up-for-TMDB-and-getting-set-up-for-getting-movie-metadata.">&#182;</a></h2><ul>
+<h2 id="Signing-up-for-TMDb-and-getting-set-up-for-getting-movie-metadata.">Signing up for TMDb and getting set up for getting movie metadata.<a class="anchor-link" href="#Signing-up-for-TMDb-and-getting-set-up-for-getting-movie-metadata.">&#182;</a></h2><ul>
 <li>Step 1. Head over to [tmdb.org] (<a href="https://www.themoviedb.org/?language=en">https://www.themoviedb.org/?language=en</a>) and create a new account there by signing up.</li>
 <li>Step 2. Click on your account icon on the top right, then from drop down menu select "Settings".</li>
 <li>Step 3. On the settings page, you will see the option "API" on the left pane. Click on that.</li>
 <li>Step 4. Apply for a new developer key. Fill out the form as required. The fields "Application Name" and "Application URL" are not important. Fill anything there.</li>
 <li>Step 5. It should generate a new API key for you and you should also receive a mail.</li>
 </ul>
-<p>Now that you have the API key for TMDB, you can query using TMDB. Remember, it allows only 40 queries per 10 seconds.</p>
+<p>Now that you have the API key for TMDb, you can query using TMDb. Remember, it allows only 40 queries per 10 seconds.</p>
 <p>An easy way to respect this is to just have a call to <i>time.sleep(1)</i> after each iteration. This is also being very nice to the server.</p>
-<p>If you want to try and maximize your throughput you can embed every TMDB request in a nested try except block. If the first try fails, the second try first uses python's sleep function to give it a little rest, and then try again to make a request. Something like this -</p>
+<p>If you want to try and maximize your throughput you can embed every TMDb request in a nested try except block. If the first try fails, the second try first uses python's sleep function to give it a little rest, and then try again to make a request. Something like this -</p>
 
 <pre><code>try:
     search.movie(query=movie) #An API request
@@ -12052,7 +12052,7 @@ except:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Using-TMDB-using-the-obtained-API-Key-to-get-movie-information">Using TMDB using the obtained API Key to get movie information<a class="anchor-link" href="#Using-TMDB-using-the-obtained-API-Key-to-get-movie-information">&#182;</a></h2>
+<h2 id="Using-TMDb-using-the-obtained-API-Key-to-get-movie-information">Using TMDb using the obtained API Key to get movie information<a class="anchor-link" href="#Using-TMDb-using-the-obtained-API-Key-to-get-movie-information">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -12061,13 +12061,13 @@ except:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>I have made these functions which make things easy. Basically, I'm making use of a library called tmdbsimple which makes TMDB using even easier. This library was installed at the time of setup.</p>
+<p>I have made these functions which make things easy. Basically, I'm making use of a library called tmdbsimple which makes TMDb using even easier. This library was installed at the time of setup.</p>
 <p>However, if you  want to avoid the library, it is also easy enough to load the API output directly into a dictionary like this without using tmdbsimple:</p>
 
 <pre><code>url = 'https://api.themoviedb.org/3/movie/1581?api_key=' + api_key
 data = urllib2.urlopen(url).read()
 
-# create dictionary from JSON 
+# create dictionary from JSON
 dataDict = json.loads(data)</code></pre>
 
 </div>
@@ -12235,7 +12235,7 @@ dataDict = json.loads(data)</code></pre>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">info</span><span class="o">=</span><span class="n">get_movie_info_tmdb</span><span class="p">(</span><span class="s2">&quot;The Matrix&quot;</span><span class="p">)</span>
-<span class="k">print</span> <span class="s2">&quot;All the Movie information from TMDB gets stored in a dictionary with the following keys for easy access -&quot;</span>
+<span class="k">print</span> <span class="s2">&quot;All the Movie information from TMDb gets stored in a dictionary with the following keys for easy access -&quot;</span>
 <span class="n">info</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
 </pre></div>
 
@@ -12251,7 +12251,7 @@ dataDict = json.loads(data)</code></pre>
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>All the Movie information from TMDB gets stored in a dictionary with the following keys for easy access -
+<pre>All the Movie information from TMDb gets stored in a dictionary with the following keys for easy access -
 </pre>
 </div>
 </div>
@@ -12340,7 +12340,7 @@ dataDict = json.loads(data)</code></pre>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Getting-movie-information-from-IMDB">Getting movie information from IMDB<a class="anchor-link" href="#Getting-movie-information-from-IMDB">&#182;</a></h2>
+<h2 id="Getting-movie-information-from-IMDb">Getting movie information from IMDb<a class="anchor-link" href="#Getting-movie-information-from-IMDb">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -12349,7 +12349,7 @@ dataDict = json.loads(data)</code></pre>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Now that we know how to get information from TMDB, here's how we can get information about the same movie from IMDB. This makes it possible for us to combine more information, and get a richer dataset. I urge you to try and see what dataset you can make, and go above and beyond the basic things I've done in this tutorial. Due to the differences between the two datasets, you will have to do some cleaning, however both of these datasets are extremely clean and it will be minimal.</p>
+<p>Now that we know how to get information from TMDb, here's how we can get information about the same movie from IMDb. This makes it possible for us to combine more information, and get a richer dataset. I urge you to try and see what dataset you can make, and go above and beyond the basic things I've done in this tutorial. Due to the differences between the two datasets, you will have to do some cleaning, however both of these datasets are extremely clean and it will be minimal.</p>
 
 </div>
 </div>
@@ -12359,18 +12359,18 @@ dataDict = json.loads(data)</code></pre>
 <div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Create the IMDB object that will be used to access the IMDb&#39;s database.</span>
-<span class="n">imbd_object</span> <span class="o">=</span> <span class="n">imdb</span><span class="o">.</span><span class="n">IMDb</span><span class="p">()</span> <span class="c1"># by default access the web.</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Create the IMDb object that will be used to access the IMDb&#39;s database.</span>
+<span class="n">imdb_object</span> <span class="o">=</span> <span class="n">imdb</span><span class="o">.</span><span class="n">IMDb</span><span class="p">()</span> <span class="c1"># by default access the web.</span>
 
 <span class="c1"># Search for a movie (get a list of Movie objects).</span>
-<span class="n">results</span> <span class="o">=</span> <span class="n">imbd_object</span><span class="o">.</span><span class="n">search_movie</span><span class="p">(</span><span class="s1">&#39;The Matrix&#39;</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">imdb_object</span><span class="o">.</span><span class="n">search_movie</span><span class="p">(</span><span class="s1">&#39;The Matrix&#39;</span><span class="p">)</span>
 
 <span class="c1"># As this returns a list of all movies containing the word &quot;The Matrix&quot;, we pick the first element</span>
 <span class="n">movie</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
-<span class="n">imbd_object</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">movie</span><span class="p">)</span>
+<span class="n">imdb_object</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">movie</span><span class="p">)</span>
 
-<span class="k">print</span> <span class="s2">&quot;All the information we can get about this movie from IMDB-&quot;</span>
+<span class="k">print</span> <span class="s2">&quot;All the information we can get about this movie from IMDb-&quot;</span>
 <span class="n">movie</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
 </pre></div>
 
@@ -12386,7 +12386,7 @@ dataDict = json.loads(data)</code></pre>
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>All the information we can get about this movie from IMDB-
+<pre>All the information we can get about this movie from IMDb-
 </pre>
 </div>
 </div>
@@ -12499,7 +12499,7 @@ dataDict = json.loads(data)</code></pre>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="A-small-comparison-of-IMDB-and-TMDB">A small comparison of IMDB and TMDB<a class="anchor-link" href="#A-small-comparison-of-IMDB-and-TMDB">&#182;</a></h2>
+<h2 id="A-small-comparison-of-IMDb-and-TMDb">A small comparison of IMDb and TMDb<a class="anchor-link" href="#A-small-comparison-of-IMDb-and-TMDb">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -12518,8 +12518,8 @@ dataDict = json.loads(data)</code></pre>
 <div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="s2">&quot;The genres for The Matrix pulled from IMDB are -&quot;</span><span class="p">,</span><span class="n">movie</span><span class="p">[</span><span class="s1">&#39;genres&#39;</span><span class="p">]</span>
-<span class="k">print</span> <span class="s2">&quot;The genres for The Matrix pulled from TMDB are -&quot;</span><span class="p">,</span><span class="n">get_movie_genres_tmdb</span><span class="p">(</span><span class="s2">&quot;The Matrix&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="s2">&quot;The genres for The Matrix pulled from IMDb are -&quot;</span><span class="p">,</span><span class="n">movie</span><span class="p">[</span><span class="s1">&#39;genres&#39;</span><span class="p">]</span>
+<span class="k">print</span> <span class="s2">&quot;The genres for The Matrix pulled from TMDb are -&quot;</span><span class="p">,</span><span class="n">get_movie_genres_tmdb</span><span class="p">(</span><span class="s2">&quot;The Matrix&quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12534,8 +12534,8 @@ dataDict = json.loads(data)</code></pre>
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The genres for The Matrix pulled from IMDB are - [u&#39;Action&#39;, u&#39;Sci-Fi&#39;]
-The genres for The Matrix pulled from TMDB are - [{u&#39;id&#39;: 28, u&#39;name&#39;: u&#39;Action&#39;}, {u&#39;id&#39;: 878, u&#39;name&#39;: u&#39;Science Fiction&#39;}]
+<pre>The genres for The Matrix pulled from IMDb are - [u&#39;Action&#39;, u&#39;Sci-Fi&#39;]
+The genres for The Matrix pulled from TMDb are - [{u&#39;id&#39;: 28, u&#39;name&#39;: u&#39;Action&#39;}, {u&#39;id&#39;: 878, u&#39;name&#39;: u&#39;Science Fiction&#39;}]
 </pre>
 </div>
 </div>
@@ -12549,7 +12549,7 @@ The genres for The Matrix pulled from TMDB are - [{u&#39;id&#39;: 28, u&#39;name
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>As we can see, both the systems are correct, but the way they package information is different. TMDB calls it "Science Fiction" and has an ID for every genre. While IMDB calls it "Sci-Fi". Thus, it is important to keep track of these things when making use of both the datasets simultaneously.</p>
+<p>As we can see, both the systems are correct, but the way they package information is different. TMDb calls it "Science Fiction" and has an ID for every genre. While IMDb calls it "Sci-Fi". Thus, it is important to keep track of these things when making use of both the datasets simultaneously.</p>
 
 </div>
 </div>
@@ -12569,7 +12569,7 @@ The genres for The Matrix pulled from TMDB are - [{u&#39;id&#39;: 28, u&#39;name
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Working-with-multiple-movies-:-Obtaining-Top-20-movies-from-TMDB">Working with multiple movies : Obtaining Top 20 movies from TMDB<a class="anchor-link" href="#Working-with-multiple-movies-:-Obtaining-Top-20-movies-from-TMDB">&#182;</a></h2>
+<h2 id="Working-with-multiple-movies-:-Obtaining-Top-20-movies-from-TMDb">Working with multiple movies : Obtaining Top 20 movies from TMDb<a class="anchor-link" href="#Working-with-multiple-movies-:-Obtaining-Top-20-movies-from-TMDb">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -12578,7 +12578,7 @@ The genres for The Matrix pulled from TMDB are - [{u&#39;id&#39;: 28, u&#39;name
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We first instantiate an object that inherits from class Movies from TMDB. Then We use the <strong>popular()</strong> class method (i.e. function) to get top movies. To get more than one page of results, the optional page argument lets us see movies from any specified page number.</p>
+<p>We first instantiate an object that inherits from class Movies from TMDb. Then We use the <strong>popular()</strong> class method (i.e. function) to get top movies. To get more than one page of results, the optional page argument lets us see movies from any specified page number.</p>
 
 </div>
 </div>
@@ -12650,7 +12650,7 @@ The genres for The Matrix pulled from TMDB are - [{u&#39;id&#39;: 28, u&#39;name
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Here is all the information you can get on this movie - 
+<pre>Here is all the information you can get on this movie -
 {u&#39;poster_path&#39;: u&#39;/tWqifoYuwLETmmasnGHO7xBjEtt.jpg&#39;, u&#39;title&#39;: u&#39;Beauty and the Beast&#39;, u&#39;overview&#39;: u&#34;A live-action adaptation of Disney&#39;s version of the classic &#39;Beauty and the Beast&#39; tale of a cursed prince and a beautiful young woman who helps him break the spell.&#34;, u&#39;release_date&#39;: u&#39;2017-03-16&#39;, u&#39;popularity&#39;: 236.720585, u&#39;original_title&#39;: u&#39;Beauty and the Beast&#39;, u&#39;backdrop_path&#39;: u&#39;/6aUWe0GSl69wMTSWWexsorMIvwU.jpg&#39;, u&#39;vote_count&#39;: 3801, u&#39;video&#39;: False, u&#39;adult&#39;: False, u&#39;vote_average&#39;: 6.8, u&#39;genre_ids&#39;: [10751, 14, 10749], u&#39;id&#39;: 321612, u&#39;original_language&#39;: u&#39;en&#39;}
 
 
@@ -12773,7 +12773,7 @@ Logan
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>So, TMDB doesn't want to make your job as easy as you thought. Why these random numbers? Want to see their genre names? Well, there's the Genre() class for it. Let's get this done!</p>
+<p>So, TMDb doesn't want to make your job as easy as you thought. Why these random numbers? Want to see their genre names? Well, there's the Genre() class for it. Let's get this done!</p>
 
 </div>
 </div>
@@ -12888,7 +12888,7 @@ Logan [u&#39;Action&#39;, u&#39;Drama&#39;, u&#39;Science Fiction&#39;]
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Making use of the same api as before, we will just pull results from the top 50 pages. As mentioned earlier, the "page" attribute of the command top_movies=all_movies.popular() can be used for this purpose.</p>
+<p>Making use of the same API as before, we will just pull results from the top 50 pages. As mentioned earlier, the "page" attribute of the command top_movies=all_movies.popular() can be used for this purpose.</p>
 
 </div>
 </div>
@@ -12967,7 +12967,7 @@ Logan [u&#39;Action&#39;, u&#39;Drama&#39;, u&#39;Science Fiction&#39;]
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Pairwise-analysis-of-Movie-Genres">Pairwise analysis of Movie Genres<a class="anchor-link" href="#Pairwise-analysis-of-Movie-Genres">&#182;</a></h1>
+<h1 id="Pairwise-analysis-of-movie-genres">Pairwise analysis of movie genres<a class="anchor-link" href="#Pairwise-analysis-of-movie-genres">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -12976,7 +12976,7 @@ Logan [u&#39;Action&#39;, u&#39;Drama&#39;, u&#39;Science Fiction&#39;]
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>As our dataset is multi label, simply looking at the ditribution of genres is not sufficient. It might be beneficial to see which genres co-occur, as it might shed some light on inherent biases in our dataset. For example, it would make sense if romance and comedy occur together more often than documentary and comedy. Such inherent biases tell us that the underlying population we are sampling from itself is skewed and not balanced. We may then take steps to account for such problems. Even if we don't take such steps, it is important to be aware that we are making the assumption that an unbalanced dataset is not hurting our performance and if need be, we can come back to address this assumption. Good old scientific method, eh?</p>
+<p>As our dataset is multi label, simply looking at the distribution of genres is not sufficient. It might be beneficial to see which genres co-occur, as it might shed some light on inherent biases in our dataset. For example, it would make sense if romance and comedy occur together more often than documentary and comedy. Such inherent biases tell us that the underlying population we are sampling from itself is skewed and not balanced. We may then take steps to account for such problems. Even if we don't take such steps, it is important to be aware that we are making the assumption that an unbalanced dataset is not hurting our performance and if need be, we can come back to address this assumption. Good old scientific method, eh?</p>
 <p>So for the top 1000 movies let's do some pairwise analysis for genre distributions. Our main purpose is to see which genres occur together in the same movie. So, we first define a function which takes a list and makes all possible pairs from it. Then, we pull the list of genres for a movie and run this function on the list of genres to get all pairs of genres which occur together</p>
 
 </div>
@@ -13021,7 +13021,7 @@ Logan [u&#39;Action&#39;, u&#39;Drama&#39;, u&#39;Science Fiction&#39;]
 <span class="n">allPairs</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">movie</span> <span class="ow">in</span> <span class="n">top1000_movies</span><span class="p">:</span>
     <span class="n">allPairs</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">list2pairs</span><span class="p">(</span><span class="n">movie</span><span class="p">[</span><span class="s1">&#39;genre_ids&#39;</span><span class="p">]))</span>
-    
+
 <span class="n">nr_ids</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">allPairs</span><span class="p">)</span>
 <span class="n">visGrid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">nr_ids</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">nr_ids</span><span class="p">)))</span>
 <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">allPairs</span><span class="p">:</span>
@@ -13535,7 +13535,7 @@ AAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Delving-Deeper-into-co-occurrence-of-genres">Delving Deeper into co-occurrence of genres<a class="anchor-link" href="#Delving-Deeper-into-co-occurrence-of-genres">&#182;</a></h2>
+<h2 id="Delving-deeper-into-co-occurrence-of-genres">Delving deeper into co-occurrence of genres<a class="anchor-link" href="#Delving-deeper-into-co-occurrence-of-genres">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -13577,7 +13577,7 @@ AAAASUVORK5CYII=
 <span class="n">annot_lookup_sorted</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">row_labels_</span><span class="p">):</span>
     <span class="n">annot_lookup_sorted</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Genre_ID_to_name</span><span class="p">[</span><span class="n">nr_ids</span><span class="p">[</span><span class="n">i</span><span class="p">]])</span>
-    
+
 <span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">fit_data</span><span class="p">,</span> <span class="n">xticklabels</span><span class="o">=</span><span class="n">annot_lookup_sorted</span><span class="p">,</span> <span class="n">yticklabels</span><span class="o">=</span><span class="n">annot_lookup_sorted</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;After biclustering; rearranged to show biclusters&quot;</span><span class="p">)</span>
 
@@ -14039,7 +14039,7 @@ GRo5JpTJZDKZoZGNUCaTyWSGRjZCmUwmkxka2QhlMplMZmj8P9lnC3dnQTSyAAAAAElFTkSuQmCC
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Looking at the above figure, "boxes" or groups of movie genres automatically emerge!</p>
-<p>Intuitively - Crime, Sci-Fi, Mystery, Action, Horror, Drama, Thriller, etc co-occur. 
+<p>Intuitively - Crime, Sci-Fi, Mystery, Action, Horror, Drama, Thriller, etc co-occur.
 AND, Romance, Fantasy, Family, Music, Adventure, etc co-occur.</p>
 <p>That makes a lot of intuitive sense, right?</p>
 <p>One challenge is the broad range of the drama genre. It makes the two clusters highly overlapping. If we merge it together with action thriller, etc. We will end up with nearly all movies just having that label.</p>
@@ -14052,8 +14052,8 @@ AND, Romance, Fantasy, Family, Music, Adventure, etc co-occur.</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Based on playing around with the stuff above, we can sort the data into the following genre categories - "Drama, Action, ScienceFiction, exciting(thriller, crime, mystery), uplifting(adventure, fantasy, animation, comedy, romance, family), Horror, History"</strong></p>
-<p>Note: that this categorization is subjective and by no means the only right solution. One could also just stay with the original labels and only exclude the ones with not enough data. Such tricks are important to balance the dataset, it allows us to increase or decrease the strength of certain signals, making it possible to improve our inferences :)</p>
+<p><strong>Based on playing around with the stuff above, we can sort the data into the following genre categories - "Drama, Action, ScienceFiction, Exciting(Thriller, Crime, Mystery), Uplifting(Adventure, Fantasy, Animation, Comedy, Romance, Family), Horror, History"</strong></p>
+<p>Note: This categorization is subjective and by no means the only right solution. One could also just stay with the original labels and only exclude the ones with not enough data. Such tricks are important to balance the dataset, it allows us to increase or decrease the strength of certain signals, making it possible to improve our inferences :)</p>
 
 </div>
 </div>
@@ -14088,7 +14088,7 @@ AND, Romance, Fantasy, Family, Music, Adventure, etc co-occur.</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Based-on-this-new-category-set,-we-will-now-pull-posters-from-TMDB-as-our-training-data!">Based on this new category set, we will now pull posters from TMDB as our training data!<a class="anchor-link" href="#Based-on-this-new-category-set,-we-will-now-pull-posters-from-TMDB-as-our-training-data!">&#182;</a></h1>
+<h1 id="Based-on-this-new-category-set,-we-will-now-pull-posters-from-TMDb-as-our-training-data!">Based on this new category set, we will now pull posters from TMDb as our training data!<a class="anchor-link" href="#Based-on-this-new-category-set,-we-will-now-pull-posters-from-TMDb-as-our-training-data!">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -14103,16 +14103,16 @@ AND, Romance, Fantasy, Family, Music, Adventure, etc co-occur.</p>
 <span class="n">movies</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">baseyear</span> <span class="o">=</span> <span class="mi">2017</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Starting pulling movies from TMDB. If you want to debug, uncomment the print command. This will take a while, please wait...&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Starting pulling movies from TMDb. If you want to debug, uncomment the print command. This will take a while, please wait...&#39;</span><span class="p">)</span>
 <span class="n">done_ids</span><span class="o">=</span><span class="p">[]</span>
 <span class="k">for</span> <span class="n">g_id</span> <span class="ow">in</span> <span class="n">nr_ids</span><span class="p">:</span>
     <span class="c1">#print(&#39;Pulling movies for genre ID &#39;+g_id)</span>
     <span class="n">baseyear</span> <span class="o">-=</span> <span class="mi">1</span>
     <span class="k">for</span> <span class="n">page</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
         <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
-    
+
         <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://api.themoviedb.org/3/discover/movie?api_key=&#39;</span> <span class="o">+</span> <span class="n">api_key</span>
-        <span class="n">url</span> <span class="o">+=</span> <span class="s1">&#39;&amp;language=en-US&amp;sort_by=popularity.desc&amp;year=&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">baseyear</span><span class="p">)</span> 
+        <span class="n">url</span> <span class="o">+=</span> <span class="s1">&#39;&amp;language=en-US&amp;sort_by=popularity.desc&amp;year=&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">baseyear</span><span class="p">)</span>
         <span class="n">url</span> <span class="o">+=</span> <span class="s1">&#39;&amp;with_genres=&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">g_id</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;&amp;page=&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">page</span><span class="p">)</span>
 
         <span class="n">data</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
@@ -14135,7 +14135,7 @@ AND, Romance, Fantasy, Family, Music, Adventure, etc co-occur.</p>
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Starting pulling movies from TMDB. If you want to debug, uncomment the print command. This will take a while, please wait...
+<pre>Starting pulling movies from TMDb. If you want to debug, uncomment the print command. This will take a while, please wait...
 Pulled movies for genres - 12
 </pre>
 </div>
@@ -14459,7 +14459,7 @@ Done with all the posters!
 <ul>
 <li><p>Assume every movie can have multiple genres, and then it becomes a multi-label classification problem. For example, a movie can be Action, Horror and Adventure simultaneously. Thus, every movie can be more than one genre.</p>
 </li>
-<li><p>Make clusters of genres as we did in Milestone 1 using biclustering, and then every movie can have only 1 genre. This way, the problem becomes a simpler, multi-class problem. For example, a movie could have the class - Uplifting (refer Milestone 1), or Horror or History. No movie get's more than one class.</p>
+<li><p>Make clusters of genres as we did in Milestone 1 using biclustering, and then every movie can have only 1 genre. This way, the problem becomes a simpler, multi-class problem. For example, a movie could have the class - Uplifting (refer Milestone 1), or Horror or History. No movie gets more than one class.</p>
 </li>
 </ul>
 <p>For the purposes of this implementation, I'm going with the first case explained above - i.e. a multi-label classification problem.</p>
@@ -14472,7 +14472,7 @@ Done with all the posters!
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Similarly, for designing our input features i.e. X, you may pick any features you think make sense, for example, the Director of a movie may be a good predictor for genre. OR, they may choose any features they design using algorithms like PCA. Given the richness of IMDB, TMDB and alternate sources like Wikipedia, there is a plethora of options available. <strong>Be creative here!</strong></p>
+<p>Similarly, for designing our input features i.e. X, you may pick any features you think make sense, for example, the Director of a movie may be a good predictor for genre. OR, they may choose any features they design using algorithms like PCA. Given the richness of IMDb, TMDb and alternate sources like Wikipedia, there is a plethora of options available. <strong>Be creative here!</strong></p>
 
 </div>
 </div>
@@ -14482,7 +14482,7 @@ Done with all the posters!
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Another important thing to note is that in doing so, we must also make many more small implementation decisions on the way. For example, what genres are we going to include? what movies are we going to include? All these are open ended!</p>
+<p>Another important thing to note is that in doing so, we must also make many more small implementation decisions on the way. For example, what genres are we going to include? What movies are we going to include? All these are open ended!</p>
 
 </div>
 </div>
@@ -14506,10 +14506,10 @@ Done with all the posters!
 <li>The problem is framed here as a multi-label problem explained above. </li>
 <li>We will try to predict multiple genres associated with a movie. This will be our Y.</li>
 <li>We will use 2 different kinds of X - text and images. </li>
-<li>For the text part - Input features being used to predict the genre is a form of the movie's plot available from TMDB using the property 'overview'. This will be our X.</li>
+<li>For the text part - Input features being used to predict the genre is a form of the movie's plot available from TMDb using the property 'overview'. This will be our X.</li>
 <li>For the image part - we will use the scraped poster images as our X. </li>
 </ul>
-<p>NOTE : We will first look at some conventional machine learning models, which were popular before the recent rise of neural networks and deep learning. For the poster image to genre prediction, I have avoided using this for the reason that conventional ML models are simply not used anymore without using deep learning for feature extraction (all discussed in detail ahead, don't be scared by the jargon). For the movie overview to genre prediction problem we will look at both conventional models and deep learning models.</p>
+<p>Note : We will first look at some conventional machine learning models, which were popular before the recent rise of neural networks and deep learning. For the poster image to genre prediction, I have avoided using this for the reason that conventional ML models are simply not used anymore without using deep learning for feature extraction (all discussed in detail ahead, don't be scared by the jargon). For the movie overview to genre prediction problem we will look at both conventional models and deep learning models.</p>
 <p>Now, let's build our X and Y!</p>
 
 </div>
@@ -14535,12 +14535,12 @@ Done with all the posters!
     <span class="n">movie</span><span class="o">=</span><span class="n">no_duplicate_movies</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
     <span class="nb">id</span><span class="o">=</span><span class="n">movie</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span>
     <span class="n">overview</span><span class="o">=</span><span class="n">movie</span><span class="p">[</span><span class="s1">&#39;overview&#39;</span><span class="p">]</span>
-    
+
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">overview</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
         <span class="k">continue</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">movies_with_overviews</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">movie</span><span class="p">)</span>
-        
+
 <span class="nb">len</span><span class="p">(</span><span class="n">movies_with_overviews</span><span class="p">)</span>
 </pre></div>
 
@@ -14572,7 +14572,7 @@ Done with all the posters!
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Now let's store the genre's for these movies in a list that we will later transform into a binarized vector.</p>
+<p>Now let's store the genres for these movies in a list that we will later transform into a binarized vector.</p>
 <p>Binarized vector representation is a very common and important way data is stored/represented in ML. Essentially, it's a way to reduce a categorical variable with n possible values to n binary indicator variables. What does that mean? For example, let [(1,3),(4)] be the list saying that sample A has two labels 1 and 3, and sample B has one label 4. For every sample, for every possible label, the representation is simply 1 if it has that label, and 0 if it doesn't have that label. So the binarized version of the above list will be -</p>
 
 <pre><code>[(1,0,1,0]),
@@ -14788,7 +14788,7 @@ Done with all the posters!
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Well, this genre ID wasn't given to us by TMDB when we asked it for all possible genres. How do we go about this now? We can either neglect all samples that have this genre. But if you look up you'll see there's too many of these samples. So, I googled more and went into their documentation and found that this ID corresponds to the genre "Foreign". So, we add it to the dictionary of genre names ourselves. Such problems are ubiquitous in machine learning, and it is up to us to diagnose and correct them. We must always make a decision about what to keep, how to store data and so on.</p>
+<p>Well, this genre ID wasn't given to us by TMDb when we asked it for all possible genres. How do we go about this now? We can either neglect all samples that have this genre. But if you look up you'll see there's too many of these samples. So, I googled more and went into their documentation and found that this ID corresponds to the genre "Foreign". So, we add it to the dictionary of genre names ourselves. Such problems are ubiquitous in machine learning, and it is up to us to diagnose and correct them. We must always make a decision about what to keep, how to store data and so on.</p>
 
 </div>
 </div>
@@ -14871,7 +14871,7 @@ Done with all the posters!
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The overview for the movie Doctor Strange  is - 
+<pre>The overview for the movie Doctor Strange  is -
 
 
 After his career is destroyed, a brilliant but arrogant surgeon gets a new lease on life when a sorcerer takes him under his wing and trains him to defend the world against evil.
@@ -14908,8 +14908,8 @@ After his career is destroyed, a brilliant but arrogant surgeon gets a new lease
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>What this means is that, for all the movies that we have the data on, we will first count all the unique words. Say, there's 30,000 unique words. Then we can represent every movie overview as a 30000x1 vector, where each position in the vector corresponds to the presence or absence of a particular word. If the word corresponding to that position is present in the overview, that position will have 1, otherwise it will be 0.</p>
-<p>Ex - if our vocabular was 4 words - "I","am","a","good","boy", then the representation for the sentence "I am a boy" would be [1 1 1 0 1], and for the sentence "I am good" would be [1 1 0 1 0].</p>
+<p>What this means is that, for all the movies that we have the data on, we will first count all the unique words. Say, there are 30,000 unique words. Then we can represent every movie overview as a 30000x1 vector, where each position in the vector corresponds to the presence or absence of a particular word. If the word corresponding to that position is present in the overview, that position will have 1, otherwise it will be 0.</p>
+<p>Ex - if our vocabulary was 4 words - "I","am","a","good","boy", then the representation for the sentence "I am a boy" would be [1 1 1 0 1], and for the sentence "I am good" would be [1 1 0 1 0].</p>
 
 </div>
 </div>
@@ -15034,7 +15034,7 @@ After his career is destroyed, a brilliant but arrogant surgeon gets a new lease
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>For "The Matrix" a word like "computer" is a stronger indicators of it being a Sci-Fi movie, than words like "who" or "powerful" or "vast". One way computer scientists working with natural language tackled this problem in the past (and it is still used very popularly) is what we call TF-IDF i.e. Term Frequence, Inverse Document Frequency. The basic idea here is that words that are strongly indicative of the content of a single document (every movie overview is a document in our case) are words that occur very frequently in that document, and very infrequently in all other documents. For example, "Computer" occurs twice here but probably will not in most other movie overviews. Hence, it is indicative. On the other hand, generic words like "a","and","the" will occur very often in all documents. Hence, they are not indicative.</p>
+<p>For "The Matrix" a word like "computer" is a stronger indicator of it being a Sci-Fi movie, than words like "who" or "powerful" or "vast". One way computer scientists working with natural language tackled this problem in the past (and it is still used very popularly) is what we call TF-IDF i.e. Term Frequency, Inverse Document Frequency. The basic idea here is that words that are strongly indicative of the content of a single document (every movie overview is a document in our case) are words that occur very frequently in that document, and very infrequently in all other documents. For example, "Computer" occurs twice here but probably will not in most other movie overviews. Hence, it is indicative. On the other hand, generic words like "a","and","the" will occur very often in all documents. Hence, they are not indicative.</p>
 <p>So, can we use this information to reduce our insanely high 30,000 dimensional vector representation to a smaller, more handle-able number? But first up, why should we even care? The answer is probably one of the most used phrases in ML - "The Curse of Dimensionality".</p>
 
 </div>
@@ -15095,7 +15095,7 @@ both necessary and hard.</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>So, yes, if some words are unimportant, we want to get rid of them and reduce the dimensionality of our X matrix. And the way we will do it is using TF-IDF to identify un-important words. Python let's us do this with just one line of code (And this is why you should spend more time reading maths, than coding!)</p>
+<p>So, yes, if some words are unimportant, we want to get rid of them and reduce the dimensionality of our X matrix. And the way we will do it is using TF-IDF to identify un-important words. Python lets us do this with just one line of code (And this is why you should spend more time reading maths, than coding!)</p>
 
 </div>
 </div>
@@ -15105,7 +15105,7 @@ both necessary and hard.</p>
 <div class="prompt input_prompt">In&nbsp;[76]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># The min_df paramter makes sure we exclude words that only occur very rarely</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># The min_df paramater makes sure we exclude words that only occur very rarely</span>
 <span class="c1"># The default also is to exclude any words that occur in every movie description</span>
 <span class="n">vectorize</span><span class="o">=</span><span class="n">CountVectorizer</span><span class="p">(</span><span class="n">max_df</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span> <span class="n">min_df</span><span class="o">=</span><span class="mf">0.005</span><span class="p">)</span>
 <span class="n">X</span><span class="o">=</span><span class="n">vectorize</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
@@ -15204,7 +15204,7 @@ both necessary and hard.</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>A note : As we are building our own dataset, and I didn't want you to spend all your time waiting for poster image downloads to finish, I am working with an EXTREMELY small dataset. That is why, the results we will see for the deep learning portion will not be spectacular as compared to conventional machine learning methods. If you want to see the real power, you should spend some more time scraping something of the order of 100,000 images, as opposed to 1000 odd like I am doing here. Quoting the paper I mentioned above -  MORE DATA BEATS A CLEVERER ALGORITHM.</p>
+<p>Note: As we are building our own dataset, and I didn't want you to spend all your time waiting for poster image downloads to finish, I am working with an EXTREMELY small dataset. That is why the results we will see for the deep learning portion will not be spectacular as compared to conventional machine learning methods. If you want to see the real power, you should spend some more time scraping something of the order of 100,000 images, as opposed to 1000 odd like I am doing here. Quoting the paper I mentioned above -  MORE DATA BEATS A CLEVERER ALGORITHM.</p>
 <h4 id="As-the-TA,-I-saw-that-most-teams-working-on-the-project-had-data-of-the-order-of-100,000-movies.-So,-if-you-want-to-extract-the-power-of-these-models,-consider-scraping-a-larger-dataset-than-me.">As the TA, I saw that most teams working on the project had data of the order of 100,000 movies. So, if you want to extract the power of these models, consider scraping a larger dataset than me.<a class="anchor-link" href="#As-the-TA,-I-saw-that-most-teams-working-on-the-project-had-data-of-the-order-of-100,000-movies.-So,-if-you-want-to-extract-the-power-of-these-models,-consider-scraping-a-larger-dataset-than-me.">&#182;</a></h4>
 </div>
 </div>
@@ -15314,7 +15314,7 @@ both necessary and hard.</p>
 <p>Engineering the right features depends on 2 key ideas. Firstly, what is it that you are trying to solve? For example, if you want to guess my music preferences and you try to train a super awesome model while giving it what my height is as input features, you're going to have no luck. On the other hand, giving it my Spotify playlist will solve the problem with any model. So, CONTEXT of the problem plays a role.</p>
 <p>Second, you can only represent based on the data at hand. Meaning, if you didn't have access to my Spotify playlist, but to my Facebook statuses - You know all my statuses about Harvard may not be useful. But if you represent me as my Facebook statuses which are YouTube links, that would also solve the problem. So, AVAILABILITY OF DATA at hand is the second factor.</p>
 <h4 id="A-nice-way-to-think-of-it-is-to-think-that-you-start-with-the-problem-at-hand,-but-design-features-constrained-by-the-data-you-have-available.-If-you-have-many-independent-features-that-each-correlate-well-with-the-class,-learning-is-easy.-On-the-other-hand,-if-the-class-is-a-very-complex-function-of-the-features,-you-may-not-be-able-to-learn-it.">A nice way to think of it is to think that you start with the problem at hand, but design features constrained by the data you have available. If you have many independent features that each correlate well with the class, learning is easy. On the other hand, if the class is a very complex function of the features, you may not be able to learn it.<a class="anchor-link" href="#A-nice-way-to-think-of-it-is-to-think-that-you-start-with-the-problem-at-hand,-but-design-features-constrained-by-the-data-you-have-available.-If-you-have-many-independent-features-that-each-correlate-well-with-the-class,-learning-is-easy.-On-the-other-hand,-if-the-class-is-a-very-complex-function-of-the-features,-you-may-not-be-able-to-learn-it.">&#182;</a></h4><p>In the context of this problem, we would like to predict the genre of a movie. what we have access to - movie overviews, which are text descriptions of the movie plot. The hypothesis makes sense, overview is a short description of the story and the story is clearly important in assigning genres to movies.</p>
-<p>So, let's improve our features by playing with the words in the overviews in our data. One interesting way to go back to what we discussed earlier - TF-IDF. We originally used it to filter words, but we can also assign the tf-idf values as "importance" values to words, as opposed to treating them all equally. Tf-idf simply tries to identify the assign a weightage to each word in the bag of words.</p>
+<p>So, let's improve our features by playing with the words in the overviews in our data. One interesting way to go back to what we discussed earlier - TF-IDF. We originally used it to filter words, but we can also assign the TF-IDF values as "importance" values to words, as opposed to treating them all equally. TF-IDF simply tries to identify the assign a weightage to each word in the bag of words.</p>
 
 </div>
 </div>
@@ -15325,8 +15325,8 @@ both necessary and hard.</p>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Once again, the way it works is - Most movie descriptions have the word "The" in it. Obviously, it doesn't tell you anything special about it. So weightage should be inversely proportional to how many movies have the word in their description. This is the IDF part.</p>
-<p>On the other hand, for the movie interstellar, if the description has the word Space 5 times, and wormhole 2 times, then it's probably more about Space than about wormhole. Thus, space should have a high weightage. This is the TF part.</p>
-<p>We simply use TF-IDf to assign weightage to every word in the bag of words. Which makes sense, right? :)</p>
+<p>On the other hand, for the movie interstellar, if the description has the word "space" 5 times, and "wormhole" 2 times, then it's probably more about space than about wormhole. Thus, space should have a high weightage. This is the TF part.</p>
+<p>We simply use TF-IDF to assign weightage to every word in the bag of words. Which makes sense, right? :)</p>
 
 </div>
 </div>
@@ -15917,7 +15917,7 @@ MOVIE:  Patema Inverted 	PREDICTION:  Documentary,Music
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The above results were good, but it's time to bring out the big guns. So first and foremost, let's get a very short idea about what's deep learning. This is for peope who don't have background in this - it's high level and gives just the intuition.</p>
+<p>The above results were good, but it's time to bring out the big guns. So first and foremost, let's get a very short idea about what's deep learning. This is for people who don't have background in this - it's high level and gives just the intuition.</p>
 
 </div>
 </div>
@@ -15927,7 +15927,7 @@ MOVIE:  Patema Inverted 	PREDICTION:  Documentary,Music
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>As described above, the two most immportant concepts in doing good classification (or regression) are to 1) use the right representation which captures the right information about the data which is relavant to the problem at hand 2) Using the right model which has the capability of making sense of the representation fed to it.</p>
+<p>As described above, the two most important concepts in doing good classification (or regression) are to 1) use the right representation which captures the right information about the data which is relevant to the problem at hand 2) Using the right model which has the capability of making sense of the representation fed to it.</p>
 
 </div>
 </div>
@@ -15937,7 +15937,7 @@ MOVIE:  Patema Inverted 	PREDICTION:  Documentary,Music
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>While for the second part we have complicated and powerful models that we have studied at length, we don't seem to have a principled, mathematical way of doing the first part - i.e. representation. What we did above was to see "What makes sense", and go from there. That is not a good approach for complex data/ complex problems. Is there some way to automate this? Deep Learning, does just this.</p>
+<p>While for the second part we have complicated and powerful models that we have studied at length, we don't seem to have a principled, mathematical way of doing the first part - i.e. representation. What we did above was to see "What makes sense", and go from there. That is not a good approach for complex data/ complex problems. Is there some way to automate this? Deep Learning does just this.</p>
 
 </div>
 </div>
@@ -15947,8 +15947,8 @@ MOVIE:  Patema Inverted 	PREDICTION:  Documentary,Music
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>To just emphasize the importance of representation in the complex tasks we usually attempt with Deep Learning, let me talk about the original problem which made it famous. The paper is often reffered to as the "Imagenet Challenge Paper", and it was basically working on object recognition in images. Let's try to think about an algorithm that tries to detect a chair.</p>
-<h2 id="If-I-ask-you-to-&quot;Define&quot;-a-chair,-how-would-you?---Something-with-4-legs?">If I ask you to "Define" a chair, how would you? - Something with 4 legs?<a class="anchor-link" href="#If-I-ask-you-to-&quot;Define&quot;-a-chair,-how-would-you?---Something-with-4-legs?">&#182;</a></h2>
+<p>To just emphasize the importance of representation in the complex tasks we usually attempt with Deep Learning, let me talk about the original problem which made it famous. The paper is often referred to as the "Imagenet Challenge Paper", and it was basically working on object recognition in images. Let's try to think about an algorithm that tries to detect a chair.</p>
+<h2 id="If-I-ask-you-to-&quot;define&quot;-a-chair,-how-would-you?---Something-with-4-legs?">If I ask you to "define" a chair, how would you? - Something with 4 legs?<a class="anchor-link" href="#If-I-ask-you-to-&quot;define&quot;-a-chair,-how-would-you?---Something-with-4-legs?">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -15958,7 +15958,7 @@ MOVIE:  Patema Inverted 	PREDICTION:  Documentary,Music
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><img src="chair1.png" height="400" width="400"></p>
-<h3><center>All are chairs, none with 4 legs. (Pic Credit: Zoya Bylinskii)</center></h3>
+<h3><center>All are chairs, none with 4 legs. (Image credit: Zoya Bylinskii)</center></h3>
 </div>
 </div>
 </div>
@@ -15977,7 +15977,7 @@ MOVIE:  Patema Inverted 	PREDICTION:  Documentary,Music
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><img src="chair2.png" height="400" width="400"></p>
-<h3><center>All are surfaces we sit on, none are chairs. (Pic Credit: Zoya Bylinskii)</center></h3>
+<h3><center>All are surfaces we sit on, none are chairs. (Image credit: Zoya Bylinskii)</center></h3>
 </div>
 </div>
 </div>
@@ -15996,7 +15996,7 @@ MOVIE:  Patema Inverted 	PREDICTION:  Documentary,Music
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The "Deep" in the deep learning comes from the fact that it was conventionally applied to Neural Networks. Neural Networks, as we all know, are structures organized in layers. Layers of computations. Why do we need layers? Because these layers can be seen as sub-tasks that we do in the complicated task of identifying a chair. It can be thought as a heirarchical break down of a complicated job into smalled sub-tasks.</p>
+<p>The "deep" in the deep learning comes from the fact that it was conventionally applied to Neural Networks. Neural Networks, as we all know, are structures organized in layers. Layers of computations. Why do we need layers? Because these layers can be seen as sub-tasks that we do in the complicated task of identifying a chair. It can be thought as a hierarchical break down of a complicated job into smaller sub-tasks.</p>
 <p>Mathematically, each layer acts like a space transformation which takes the pixel values to a high dimensional space. When we start out, every pixel in the image is given equal importance in our matrix. With each layer, convolution operations give some parts more importance, and some lesser importance. In doing so, we transform our images to a space in which similar looking objects/object parts are closer (We are basically learning this space transformation in deep learning, nothing else)</p>
 
 </div>
@@ -16017,7 +16017,7 @@ MOVIE:  Patema Inverted 	PREDICTION:  Documentary,Music
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>So, in a nutshell, the first few layers of a "Deep" network learn the right representation of the data, given the problem (which is mathematically described by your objective function trying to minimize difference between ground truth and predicted labels). The last layer simply looks how close or far apart things are in this high dimensional space.</strong></p>
+<p><strong>So, in a nutshell, the first few layers of a "deep" network learn the right representation of the data, given the problem (which is mathematically described by your objective function trying to minimize difference between ground truth and predicted labels). The last layer simply looks how close or far apart things are in this high dimensional space.</strong></p>
 
 </div>
 </div>
@@ -16037,12 +16037,12 @@ MOVIE:  Patema Inverted 	PREDICTION:  Documentary,Music
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Section-7---Deep-Learning-for-predicting-genre-from-poster">Section 7 - Deep Learning for predicting genre from poster<a class="anchor-link" href="#Section-7---Deep-Learning-for-predicting-genre-from-poster">&#182;</a></h1><p>Once again, we must make an implementation decision. This time, it has more to do with how much time are we willing to spend in return for added accuracy. We are going to use here a technique that is commonly referred to as Pre-Training in Machine Learning Literature.</p>
+<h1 id="Section-7---Deep-Learning-for-predicting-genre-from-poster">Section 7 - Deep Learning for predicting genre from poster<a class="anchor-link" href="#Section-7---Deep-Learning-for-predicting-genre-from-poster">&#182;</a></h1><p>Once again, we must make an implementation decision. This time, it has more to do with how much time we are willing to spend in return for added accuracy. We are going to use here a technique that is commonly referred to as Pre-Training in Machine Learning Literature.</p>
 <p>Instead of me trying to re-invent the wheel here, I am going to borrow this short section on pre-training from Stanford University's lecture on <a href='http://cs231n.github.io/transfer-learning/'> CNN's</a>. To quote -</p>
 <p>''In practice, very few people train an entire Convolutional Network from scratch (with random initialization), because it is relatively rare to have a dataset of sufficient size. Instead, it is common to pretrain a ConvNet on a very large dataset (e.g. ImageNet, which contains 1.2 million images with 1000 categories), and then use the ConvNet either as an initialization or a fixed feature extractor for the task of interest. ''</p>
-<p>There are three broad ways in which transfer learning or pre-training can be done. (The 2 concepts are different and to understand the difference clearly, I suggest you read the linked lecture thoroughly). The way we are going to about it is by using a pre-trained, released ConvNet as feature extractor. Take a ConvNet pretrained on ImageNet (a popular object detection dataset), remove the last fully-connected layer. After removing the last layer, what we have is just another neural network i.e. a stack of space tranformations. But, originally the output of this stack can be pumped into a single layer which can classify the image into categories like Car, Dog, Cat and so on.</p>
+<p>There are three broad ways in which transfer learning or pre-training can be done. (The 2 concepts are different and to understand the difference clearly, I suggest you read the linked lecture thoroughly). The way we are going to about it is by using a pre-trained, released ConvNet as feature extractor. Take a ConvNet pretrained on ImageNet (a popular object detection dataset), remove the last fully-connected layer. After removing the last layer, what we have is just another neural network i.e. a stack of space transformations. But, originally the output of this stack can be pumped into a single layer which can classify the image into categories like Car, Dog, Cat and so on.</p>
 <p>What this means, is that in the space this stack transforms the images to, all images which contain a "dog" are closer to each other, and all images containing a "cat" are closer. Thus, it is a meaningful space where images with similar objects are closer.</p>
-<p>Think about it, now if we pump our posters through this stack, it will embed them in a space where posters which contain similar objects are closer. This is a very meaningful feature engineering method! While this may not be ideal for genre prediction, it might be quite meaningful. For example, all posters with a gun or a car are probably action. While a smiling couple would point to romance or drama. The alternative would be to train the CNN from scratch which is fairly computationally intensive and involves a lot of tricks to get the CNN training to converge to the optimal space tranformation.</p>
+<p>Think about it, now if we pump our posters through this stack, it will embed them in a space where posters which contain similar objects are closer. This is a very meaningful feature engineering method! While this may not be ideal for genre prediction, it might be quite meaningful. For example, all posters with a gun or a car are probably action. While a smiling couple would point to romance or drama. The alternative would be to train the CNN from scratch which is fairly computationally intensive and involves a lot of tricks to get the CNN training to converge to the optimal space transformation.</p>
 <p>This way, we can start off with something strong, and then build on top. We pump our images through the pre-trained network to extract the visual features from the posters. Then, using these features as descriptors for the image, and genres as the labels, we train a simpler neural network from scratch which learns to do simply classification on this dataset. These 2 steps are exactly what we are going to do for predicting genres from movie posters.</p>
 
 </div>
@@ -16073,7 +16073,7 @@ MOVIE:  Patema Inverted 	PREDICTION:  Documentary,Music
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>For Visual features, either we can train a deep neural network ourselves from scratch, or we can use a pre-trained one made available to us from the Visual Geometry Group at Oxford University, one of the most popular methods. This is called the VGG-net. Or as they call it, we will extract the VGG features of an image. Mathematically, as mentioned, it's just a space transformation in the form of layers. So, we simply need to perform this chain of transformations on our image, right? Keras is a library that makes it very easy for us to do this. Some other common ones are Tensorflow and PyTorch. While the latter two are very powerful and customizable and used more often in practice, Keras makes it easy to prototype by keeping the syntax simple.</p>
-<p>We will be working with Keras to keep things simple in code, so that we can spend more time understanding and less time coding. Some common ways people refer to this step are - "Getting the VGG features of an image", or "Forward Propogating the image through VGG and chopping off the last layer". In keras, this is as easy as writing 4 lines.</p>
+<p>We will be working with Keras to keep things simple in code, so that we can spend more time understanding and less time coding. Some common ways people refer to this step are - "Getting the VGG features of an image", or "Forward Propogating the image through VGG and chopping off the last layer". In Keras, this is as easy as writing 4 lines.</p>
 
 </div>
 </div>
@@ -16083,7 +16083,7 @@ MOVIE:  Patema Inverted 	PREDICTION:  Documentary,Music
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Loading the list of movies we had downloaded posters for eariler - </span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Loading the list of movies we had downloaded posters for earlier - </span>
 <span class="n">f</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;poster_movies.pckl&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
 <span class="n">poster_movies</span><span class="o">=</span><span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
@@ -16167,7 +16167,7 @@ MOVIE:  Patema Inverted 	PREDICTION:  Documentary,Music
         <span class="k">except</span><span class="p">:</span>
             <span class="n">failed_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">imname</span><span class="p">)</span>
             <span class="k">continue</span>
-        
+
     <span class="k">else</span><span class="p">:</span>
         <span class="k">continue</span>
 <span class="k">print</span> <span class="s2">&quot;Done with all features, please pickle for future use!&quot;</span>
@@ -16269,7 +16269,7 @@ Done with all features, please pickle for future use!
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span> 
+<div class=" highlight hl-ipython2"><pre><span></span>
 </pre></div>
 
 </div>
@@ -16632,7 +16632,7 @@ Done with all features, please pickle for future use!
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Now, we create our own keras neural network to use the VGG features and then classify movie genres. Keras makes this super easy.</p>
+<p>Now, we create our own Keras neural network to use the VGG features and then classify movie genres. Keras makes this super easy.</p>
 <p>Neural network architectures have gotten complex over the years. But the simplest ones contain very standard computations organized in layers, as described above. Given the popularity of some of these, Keras makes it as easy as writing out the names of these operations in a sequential order. This way you can make a network while completely avoiding the Mathematics (HIGHLY RECOMMENDED SPENDING MORE TIME ON THE MATH THOUGH)</p>
 
 </div>
@@ -16653,18 +16653,18 @@ Done with all features, please pickle for future use!
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Important-Question-:-Why-do-we-need-activation-functions?">Important Question : Why do we need activation functions?<a class="anchor-link" href="#Important-Question-:-Why-do-we-need-activation-functions?">&#182;</a></h1><h4 id="Copy-pasting-the-answer-I-wrote-for-this-question-on-Quora-Feel-free-to-leave-comments-there.">Copy pasting the answer I wrote for this question on <a href="https://www.quora.com/Why-do-neural-networks-need-an-activation-function/answer/Spandan-Madan?srid=5ydm">Quora</a> Feel free to leave comments there.<a class="anchor-link" href="#Copy-pasting-the-answer-I-wrote-for-this-question-on-Quora-Feel-free-to-leave-comments-there.">&#182;</a></h4><p>""Sometimes, we tend to get lost in the jargon and confuse things easily, so the best way to go about this is getting back to our basics.</p>
+<h1 id="Important-Question-:-Why-do-we-need-activation-functions?">Important Question : Why do we need activation functions?<a class="anchor-link" href="#Important-Question-:-Why-do-we-need-activation-functions?">&#182;</a></h1><h4 id="Copy-pasting-the-answer-I-wrote-for-this-question-on-Quora-Feel-free-to-leave-comments-there.">Copy pasting the answer I wrote for this question on <a href="https://www.quora.com/Why-do-neural-networks-need-an-activation-function/answer/Spandan-Madan?srid=5ydm">Quora</a>. Feel free to leave comments there.<a class="anchor-link" href="#Copy-pasting-the-answer-I-wrote-for-this-question-on-Quora-Feel-free-to-leave-comments-there.">&#182;</a></h4><p>"Sometimes, we tend to get lost in the jargon and confuse things easily, so the best way to go about this is getting back to our basics.</p>
 <p>Don’t forget what the original premise of machine learning (and thus deep learning) is - IF the input and output are related by a function y=f(x), then if we have x, there is no way to exactly know f unless we know the process itself. However, machine learning gives you the ability to approximate f with a function g, and the process of trying out multiple candidates to identify the function g best approximating f is called machine learning.</p>
-<p>Ok, that was machine learning, and how is deep learning different? Deep learning simply tries to expand the possible kind of functions that can be approximated using the above mentioned machine learning paradigm. Roughly speaking, if the previous model could learn say 10,000 kinds of functions, now it will be able to learn say 100,000 kinds (in actuality both are infinite spaces but one is larger than the other, because maths is cool that ways.)</p>
+<p>Ok, that was machine learning, and how is deep learning different? Deep learning simply tries to expand the possible kind of functions that can be approximated using the above mentioned machine learning paradigm. Roughly speaking, if the previous model could learn say 10,000 kinds of functions, now it will be able to learn say 100,000 kinds (in actuality both are infinite spaces but one is larger than the other, because maths is cool that way.)</p>
 <p>If you want to know the mathematics of it, go read about VC dimension and how more layers in a network affect it. But I will avoid the mathematics here and rely on your intuition to believe me when I say that not all data can be classified correctly into categories using a linear function. So, we need our deep learning model to be able to approximate more complex functions than just a linear function.</p>
-<p>Now, let’s come to your non linearity bit. Imagine a linear function y=2x+3, and another one y=4x+7. What happens if I pool them and take an average? I get another linear function y= 3x+5. So instead of doing those two computations separately and then averaging it out, I could have just used the single linear function y=3x+5. Obviously, this logic holds good if I have more than 2 such linear functions. This is exactly what will happen if you don’t have have non-linearities in your nodes, and also what others have written in their answers.</p>
+<p>Now, let’s come to your non linearity bit. Imagine a linear function y=2x+3, and another one y=4x+7. What happens if I pool them and take an average? I get another linear function y= 3x+5. So instead of doing those two computations separately and then averaging it out, I could have just used the single linear function y=3x+5. Obviously, this logic holds good if I have more than 2 such linear functions. This is exactly what will happen if you don’t have non-linearities in your nodes, and also what others have written in their answers.</p>
 <p>It simply follows from the definition of a linear function -</p>
 <p>(i) If you take two linear functions, AND</p>
-<p>(ii)Take a linear combination of them (which is how we combine the outputs of multiple nodes of a network)</p>
+<p>(ii) Take a linear combination of them (which is how we combine the outputs of multiple nodes of a network)</p>
 <p>You are BOUND to get a linear function because f(x)+g(x)=mx+b+nx+c=(m+n)x+(b+c)= say h(x).</p>
 <p>And you could in essence replace your whole network by a simple matrix transformation which accounts for all linear combinations and up/downsamplings.</p>
 <p>In a nutshell, you’ll only be trying to learn a linear approximation for original function f relating the input and the output. Which as we discussed above, is not always the best approximation. Adding non-linearities ensures that you can learn more complex functions by approximating every non-linear function as a LINEAR combination of a large number of non-linear functions.</p>
-<p>Still new to the field, so if there’s something wrong here please comment below! Hope it helps""</p>
+<p>Still new to the field, so if there’s something wrong here please comment below! Hope it helps"</p>
 
 </div>
 </div>
@@ -16675,7 +16675,7 @@ Done with all features, please pickle for future use!
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="Let's-train-our-model-then,-using-the-features-we-extracted-from-VGG-net">Let's train our model then, using the features we extracted from VGG net<a class="anchor-link" href="#Let's-train-our-model-then,-using-the-features-we-extracted-from-VGG-net">&#182;</a></h4><p>The model we will use has just 1 hidden layer between the VGG features and the final output layer. The simplest neural network you can get. An image goes into this network with the dimensions (1,25088), the first layer's output is 1024 dimensional. This hidden layer output undergoes a pointwise RELU activation. This output gets transformed into the output layer of 20 dimensions. It goes through a sigmoid.</p>
-<p>The sigmoid, or the squashing function as it is often called, is a function which squashes numbers between 0 and 1. What are you reminded of when you think of numebers between 0 and 1? Right, probability.</p>
+<p>The sigmoid, or the squashing function as it is often called, is a function which squashes numbers between 0 and 1. What are you reminded of when you think of numbers between 0 and 1? Right, probability.</p>
 <p>By squashing the score of each of the 20 output labels between 0 and 1, sigmoid lets us interpret their scores as probabilities. Then, we can just pick the classes with the top 3 or 5 probability scores as the predicted genres for the movie poster! Simple!</p>
 
 </div>
@@ -16729,8 +16729,8 @@ Done with all features, please pickle for future use!
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We train the model using the fit() function. The parameters it takes are - training features and training labels, epochs, batch_size and verbose.</p>
-<p>Simplest one - verbose. 0="dont print anything as you work", 1="Inform me as you go".</p>
-<p>Often the data set is too large to be loaded into the RAM. So, we load data in batches. For batch_size=32 and epochs=10, the model starts loading rows from X in batches of 32 everytime it calculates the loss and updates the model. It keeps on going till it has covered all the samples 10 times.</p>
+<p>Simplest one - verbose. 0="Don't print anything as you work", 1="Inform me as you go".</p>
+<p>Often the data set is too large to be loaded into the RAM. So, we load data in batches. For batch_size=32 and epochs=10, the model starts loading rows from X in batches of 32 every time it calculates the loss and updates the model. It keeps on going till it has covered all the samples 10 times.</p>
 <p>So, the no. of times model is updated = (Total Samples/Batch Size) * (Epochs)</p>
 
 </div>
@@ -16757,25 +16757,25 @@ Done with all features, please pickle for future use!
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Epoch 1/10
-1053/1053 [==============================] - 7s - loss: 2.3120 - acc: 0.8160     
+1053/1053 [==============================] - 7s - loss: 2.3120 - acc: 0.8160
 Epoch 2/10
-1053/1053 [==============================] - 6s - loss: 1.6045 - acc: 0.8724     
+1053/1053 [==============================] - 6s - loss: 1.6045 - acc: 0.8724
 Epoch 3/10
-1053/1053 [==============================] - 7s - loss: 1.1555 - acc: 0.9078     
+1053/1053 [==============================] - 7s - loss: 1.1555 - acc: 0.9078
 Epoch 4/10
-1053/1053 [==============================] - 7s - loss: 0.9149 - acc: 0.9264     
+1053/1053 [==============================] - 7s - loss: 0.9149 - acc: 0.9264
 Epoch 5/10
-1053/1053 [==============================] - 6s - loss: 0.7455 - acc: 0.9420     
+1053/1053 [==============================] - 6s - loss: 0.7455 - acc: 0.9420
 Epoch 6/10
-1053/1053 [==============================] - 6s - loss: 0.6218 - acc: 0.9522     
+1053/1053 [==============================] - 6s - loss: 0.6218 - acc: 0.9522
 Epoch 7/10
-1053/1053 [==============================] - 7s - loss: 0.5393 - acc: 0.9623     
+1053/1053 [==============================] - 7s - loss: 0.5393 - acc: 0.9623
 Epoch 8/10
-1053/1053 [==============================] - 7s - loss: 0.5104 - acc: 0.9645     
+1053/1053 [==============================] - 7s - loss: 0.5104 - acc: 0.9645
 Epoch 9/10
-1053/1053 [==============================] - 6s - loss: 0.4923 - acc: 0.9644     
+1053/1053 [==============================] - 6s - loss: 0.4923 - acc: 0.9644
 Epoch 10/10
-1053/1053 [==============================] - 6s - loss: 0.4475 - acc: 0.9648     
+1053/1053 [==============================] - 6s - loss: 0.4475 - acc: 0.9648
 </pre>
 </div>
 </div>
@@ -17064,7 +17064,7 @@ Predicted:  Comedy,Animation,Family  Actual:  Animation,Comedy,Family
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>So, even with just the poster i.e. visual features we are able to make great predictions! Sure, text outperforms the visual features, but the important thing is that it still work. In more complicated models, we can combine the two to make even better predictions. That is precisely what I work on in my research.</p>
+<p>So, even with just the poster i.e. visual features we are able to make great predictions! Sure, text outperforms the visual features, but the important thing is that it still works. In more complicated models, we can combine the two to make even better predictions. That is precisely what I work on in my research.</p>
 
 </div>
 </div>
@@ -17286,7 +17286,7 @@ Download it to the directory of this tutorial i.e. in the same folder as this ip
 <ul>
 <li>Take movie overview</li>
 <li>Throw out stop words</li>
-<li>For non stop words:<ul>
+<li>For nonstop words:<ul>
 <li>If in word2vec - take it's word2vec representation which is 300 dimensional</li>
 <li>If not - throw word</li>
 </ul>
@@ -17304,7 +17304,7 @@ Download it to the directory of this tutorial i.e. in the same folder as this ip
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Why do we take the arithmetic mean?</strong>
-If you feel that we should have kept all the words separately - Then you're thinking correct, but sadly we're limited by the way current day neural networks work. I will not mull over this for the fear of stressing too much on an otherwise irrelevant detail. But if you're interested, read this awesome paper - 
+If you feel that we should have kept all the words separately - Then you're thinking correct, but sadly we're limited by the way current day neural networks work. I will not mull over this for the fear of stressing too much on an otherwise irrelevant detail. But if you're interested, read this awesome paper -
 <a href="https://jiajunwu.com/papers/dmil_cvpr.pdf">https://jiajunwu.com/papers/dmil_cvpr.pdf</a></p>
 
 </div>
@@ -17386,7 +17386,7 @@ If you feel that we should have kept all the words separately - Then you're thin
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span> 
+<div class=" highlight hl-ipython2"><pre><span></span>
 </pre></div>
 
 </div>
@@ -17692,25 +17692,25 @@ If you feel that we should have kept all the words separately - Then you're thin
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Epoch 1/10
-982/982 [==============================] - 0s - loss: 0.4819 - acc: 0.8520     
+982/982 [==============================] - 0s - loss: 0.4819 - acc: 0.8520
 Epoch 2/10
-982/982 [==============================] - 0s - loss: 0.4642 - acc: 0.8520     
+982/982 [==============================] - 0s - loss: 0.4642 - acc: 0.8520
 Epoch 3/10
-982/982 [==============================] - 0s - loss: 0.4527 - acc: 0.8520     
+982/982 [==============================] - 0s - loss: 0.4527 - acc: 0.8520
 Epoch 4/10
-982/982 [==============================] - 0s - loss: 0.4456 - acc: 0.8520     
+982/982 [==============================] - 0s - loss: 0.4456 - acc: 0.8520
 Epoch 5/10
-982/982 [==============================] - 0s - loss: 0.4407 - acc: 0.8520     
+982/982 [==============================] - 0s - loss: 0.4407 - acc: 0.8520
 Epoch 6/10
-982/982 [==============================] - 0s - loss: 0.4367 - acc: 0.8520     
+982/982 [==============================] - 0s - loss: 0.4367 - acc: 0.8520
 Epoch 7/10
-982/982 [==============================] - 0s - loss: 0.4332 - acc: 0.8520     
+982/982 [==============================] - 0s - loss: 0.4332 - acc: 0.8520
 Epoch 8/10
-982/982 [==============================] - 0s - loss: 0.4295 - acc: 0.8520     
+982/982 [==============================] - 0s - loss: 0.4295 - acc: 0.8520
 Epoch 9/10
-982/982 [==============================] - 0s - loss: 0.4260 - acc: 0.8520     
+982/982 [==============================] - 0s - loss: 0.4260 - acc: 0.8520
 Epoch 10/10
-982/982 [==============================] - 0s - loss: 0.4227 - acc: 0.8520     
+982/982 [==============================] - 0s - loss: 0.4227 - acc: 0.8520
 </pre>
 </div>
 </div>
@@ -17882,7 +17882,7 @@ Epoch 10/10
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Our predictions for the movies are - 
+<pre>Our predictions for the movies are -
 
 Predicted:  [u&#39;Science Fiction&#39;, u&#39;Action&#39;, u&#39;Adventure&#39;]  Actual:  [u&#39;Adventure&#39;, u&#39;Action&#39;, u&#39;Comedy&#39;, u&#39;Romance&#39;]
 Predicted:  [u&#39;Thriller&#39;, u&#39;Crime&#39;, u&#39;Mystery&#39;]  Actual:  [u&#39;Drama&#39;, u&#39;Thriller&#39;, u&#39;Science Fiction&#39;]
@@ -17933,7 +17933,7 @@ Predicted:  [u&#39;Drama&#39;, u&#39;Thriller&#39;, u&#39;Mystery&#39;]  Actual:
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Even without much tuning of the above model, these results are able to beat our previous results.</p>
-<p>Note - I got accuracies as high as 78% when doing classification using plots scraped from Wikipedia. The large amount of information was very suitable for movie genre classification with a deep model. Strongly suggest you to try playing around with architectures.</p>
+<p>Note: I got accuracies as high as 78% when doing classification using plots scraped from Wikipedia. The large amount of information was very suitable for movie genre classification with a deep model. Strongly suggest you to try playing around with architectures.</p>
 
 </div>
 </div>
@@ -17943,9 +17943,9 @@ Predicted:  [u&#39;Drama&#39;, u&#39;Thriller&#39;, u&#39;Mystery&#39;]  Actual:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Section-9---Upcoming-Tutorials-and-Acknowledgements">Section 9 - Upcoming Tutorials and Acknowledgements<a class="anchor-link" href="#Section-9---Upcoming-Tutorials-and-Acknowledgements">&#182;</a></h1><p>Congrats! This is the end of our pilot project! Needless to say, a lot of the above content may be new to you, or may be things that you know very well. If it's the former, I hope this tutorial would have helped you. If it is the latter and you think I wrote something incorrect or that my understanding can be improved, feel free to create a github issue so that I can correct it!</p>
-<p>Writing tutorials can take a lot of time, but it is a great learning experience. I am currently working on a tutorial focussing on word embeddings, which will explore word2vec and other word embeddings in detail. While it will take some time to be up, I will post a link to it's repository on the README for this project so that interested readers can find it.</p>
-<p>I would like to thank a few of my friends who had an indispensible role to play in me making this tutorial. Firstly, Professor Hanspeter Pfister and Verena Kaynig at Harvard, who helped guide this tutorial/project and scope it. Secondly, my friends Sahil Loomba and Matthew Tancik for their suggestions and editing the material and the presentation of the storyline. Thirdly, Zoya Bylinskii at MIT for constantly motivating me to put in my effort into this tutorial. Finally, all others who helped me feel confident enough to take up this task and to see it till the end. Thanks all of you!</p>
+<h1 id="Section-9---Upcoming-Tutorials-and-Acknowledgements">Section 9 - Upcoming Tutorials and Acknowledgements<a class="anchor-link" href="#Section-9---Upcoming-Tutorials-and-Acknowledgements">&#182;</a></h1><p>Congrats! This is the end of our pilot project! Needless to say, a lot of the above content may be new to you, or may be things that you know very well. If it's the former, I hope this tutorial would have helped you. If it is the latter and you think I wrote something incorrect or that my understanding can be improved, feel free to create a Github issue so that I can correct it!</p>
+<p>Writing tutorials can take a lot of time, but it is a great learning experience. I am currently working on a tutorial focusing on word embeddings, which will explore word2vec and other word embeddings in detail. While it will take some time to be up, I will post a link to its repository on the README for this project so that interested readers can find it.</p>
+<p>I would like to thank a few of my friends who had an indispensible role to play in me making this tutorial. Firstly, Professor Hanspeter Pfister and Verena Kaynig at Harvard, who helped guide this tutorial/project and scope it. Secondly, my friends Sahil Loomba and Matthew Tancik for their suggestions and editing the material and the presentation of the storyline. Thirdly, Zoya Bylinskii at MIT for constantly motivating me to put my best effort into this tutorial. Finally, all others who helped me feel confident enough to take up this task and to see it till the end. Thanks all of you!</p>
 
 </div>
 </div>
@@ -17955,7 +17955,7 @@ Predicted:  [u&#39;Drama&#39;, u&#39;Thriller&#39;, u&#39;Mystery&#39;]  Actual:
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span> 
+<div class=" highlight hl-ipython2"><pre><span></span>
 </pre></div>
 
 </div>
@@ -17967,7 +17967,7 @@ Predicted:  [u&#39;Drama&#39;, u&#39;Thriller&#39;, u&#39;Mystery&#39;]  Actual:
   </div>
 </body>
 
- 
+
 
 
 </html>
