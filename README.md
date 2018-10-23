@@ -28,10 +28,15 @@ To make setup easy, we are going to use conda.
 
 If all the isntallations go through, you are good to go! If not, here is a list of packages that need to be installed: requests imDbPy wget tmdbsimple seaborn sklearn Pillow keras tensorflow h5py gensim nltk stop_words
 
+Please install imdbpy using 'pip install imdbpy==6.6' since earlier versions are broken
 ### Setting up conda environment in jupyter notebook
 To be able to run the environment you just created on a juputer notebook, first check that you have the python package 'ipykernel' installed. If you don't simply install it using 'pip install ipykernel'. Now, add this to your jupyter notebook using the command 'python -m ipykernel install --user --name deeplearningproject --display-name "deeplearningproject"' 
 
 Needless to say, remove all single quotes before running commands
+
+Go to the directory and run jupyter notbeook by "jupyter notebook" and open the respective notebook on browser.
+TO install TMDB: pip install tmdbsimple
+Use "import tmdbsimple as tmdb"
 
 # Known common bugs
 I will keep updating this as issues pop up on this repository. 

@@ -57,7 +57,7 @@ dependencies:
   - h5py==2.7.0
   - html5lib==0.9999999
   - idna==2.5
-  - imdbpy==5.1.1
+  - imdbpy==6.6
   - ipython-genutils==0.2.0
   - jupyter-client==5.1.0
   - jupyter-core==4.3.0
