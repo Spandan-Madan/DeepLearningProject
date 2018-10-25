@@ -8,8 +8,8 @@ In the fall of 2016, I was a Teaching Fellow (Harvard's version of TA) for the g
 # UPDATE 24th October 2018
 The tutorial has now been re-written in PyTorch thanks to Anshul Basia (https://github.com/AnshulBasia)
 
-You can access the HTML here: https://spandan-madan.github.io/DeepLearningProject/docs/Deep_Learning_Project-Pytorch.html
-and the IPython Notebook with the code in PyTorch here: 
+You can access the HTML here: https://spandan-madan.github.io/DeepLearningProject/PyTorch_version/Deep_Learning_Project-Pytorch.html
+and the IPython Notebook with the code in PyTorch here:https://github.com/Spandan-Madan/DeepLearningProject/blob/master/PyTorch_version/Deep_Learning_Project-Pytorch.ipynb 
 
 
 
