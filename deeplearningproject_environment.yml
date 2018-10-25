@@ -37,6 +37,7 @@ dependencies:
 - sqlite=3.13.0=0
 - ssl_match_hostname=3.4.0.2=py27_1
 - tk=8.5.18=0
+- torchvision=0.1.8=py27_0
 - tornado=4.5.1=py27_0
 - traitlets=4.3.2=py27_0
 - wcwidth=0.1.7=py27_0
@@ -97,4 +98,3 @@ dependencies:
   - urllib3==1.21.1
   - werkzeug==0.12.2
   - wget==3.2
-prefix: /anaconda/envs/deeplearningproject
