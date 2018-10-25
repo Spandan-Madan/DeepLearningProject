@@ -1,0 +1,10 @@
+version: '3.3'
+services:
+  jupyter:
+    image: deeplearningproject
+    build: .
+    command: /opt/conda/envs/deeplearningproject/bin/jupyter notebook --notebook-dir=/opt/notebooks --ip='*' --port=8888 --no-browser --allow-root
+    volumes:
+    - ./notebooks:/opt/notebooks
+    ports:
+    - "8888:8888"
