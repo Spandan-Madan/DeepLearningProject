@@ -33,7 +33,7 @@ To make setup easy, we are going to use conda.
 - The repository has a conda config file which will make setting up super easy. It's the file `deeplearningproject_environment.yml`
 - Then create a new conda environment using the command with `conda env create -f deeplearningproject_environment.yml`
 - Now, you can activate the environment with: `source activate deeplearningproject`  
-
+- `jupyter notebook` 
 If all the isntallations go through, you are good to go! If not, here is a list of packages that need to be installed: `requests imDbPy wget tmdbsimple seaborn sklearn Pillow keras tensorflow h5py gensim nltk stop_words`
 
 Please install imdbpy using 'pip install imdbpy==6.6' since earlier versions are broken
@@ -55,6 +55,7 @@ Needless to say, remove all single quotes before running commands.
 Go to the directory and run jupyter notbeook by "jupyter notebook" and open the respective notebook on browser.
 TO install TMDB: pip install tmdbsimple
 Use "import tmdbsimple as tmdb"
+
 
 ### Setting up a docker container with docker-compose
 
@@ -91,6 +92,16 @@ I will keep updating this as issues pop up on this repository.
 sudo pip install git+git://github.com/fchollet/keras.git --upgrade
 ```
 
+-OS Error: Too Many Open Files
+Refer to: https://stackoverflow.com/questions/16526783/python-subprocess-too-many-open-files
+or, shut down notebook and execute following the the same terminal
+``bash
+ulimit -Sn 10000
+```
+
+And restart the jupyter notebook.
 
 Hope this repo helps introduce you to a full machine learning pipeline! If you spot an error, please create an issue to help out others using this resource!
+
 To prevent problems with installation and setting up, this repository comes with a conda environment profile. The only thing you will need is to install the newest version of conda, and use this profile to create a new environment and it will come set up with all the libraries you will need for the tutorial.
+
