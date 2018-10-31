@@ -2,17 +2,19 @@ name: deeplearningproject
 channels:
 - defaults
 dependencies:
-- appnope=0.1.0=py27_0
 - backports=1.0=py27_0
 - backports_abc=0.5=py27_0
 - decorator=4.0.11=py27_0
 - enum34=1.1.6=py27_0
+- gensim=2.2.0=np112py27_0
 - get_terminal_size=1.0.0=py27_0
 - ipykernel=4.6.1=py27_0
 - ipython=5.3.0=py27_0
 - ipython_genutils=0.2.0=py27_0
-- jupyter_client=5.1.0=py27_0
-- jupyter_core=4.3.0=py27_0
+- jupyter=1.0.0=py27_0
+- jupyter_client=5.2.3=py27_0
+- jupyter_core=4.4.0=py27_0
+- numpy==1.12.1=py27_0
 - openssl=1.0.2l=0
 - path.py=10.3.1=py27_0
 - pathlib2=2.2.1=py27_0
@@ -27,6 +29,7 @@ dependencies:
 - pyzmq=16.0.2=py27_0
 - readline=6.2=2
 - scandir=1.5=py27_0
+- scipy==0.19.1=np112py27_0
 - setuptools=27.2.0=py27_0
 - simplegeneric=0.8.1=py27_1
 - singledispatch=3.4.0.3=py27_0
@@ -34,6 +37,7 @@ dependencies:
 - sqlite=3.13.0=0
 - ssl_match_hostname=3.4.0.2=py27_1
 - tk=8.5.18=0
+- torchvision=0.1.8=py27_0
 - tornado=4.5.1=py27_0
 - traitlets=4.3.2=py27_0
 - wcwidth=0.1.7=py27_0
@@ -53,21 +57,19 @@ dependencies:
   - formencode==1.3.1
   - funcsigs==1.0.2
   - functools32==3.2.3.post2
-  - gensim==2.2.0
   - h5py==2.7.0
   - html5lib==0.9999999
   - idna==2.5
   - imdbpy==6.6
   - ipython-genutils==0.2.0
-  - jupyter-client==5.1.0
-  - jupyter-core==4.3.0
+  - jupyter-client==5.2.3
+  - jupyter-core==4.4.0
   - keras==2.0.6
   - lxml==3.8.0
   - markdown==2.6.8
   - matplotlib==2.0.2
   - mock==2.0.0
   - nltk==3.2.4
-  - numpy==1.13.1
   - olefile==0.44
   - pandas==0.20.3
   - pbr==3.1.1
@@ -80,7 +82,6 @@ dependencies:
   - pyyaml==3.12
   - requests==2.18.1
   - scikit-learn==0.18.2
-  - scipy==0.19.1
   - seaborn==0.8
   - sklearn==0.0
   - smart-open==1.5.3
@@ -97,5 +98,3 @@ dependencies:
   - urllib3==1.21.1
   - werkzeug==0.12.2
   - wget==3.2
-prefix: /anaconda/envs/deeplearningproject
-
