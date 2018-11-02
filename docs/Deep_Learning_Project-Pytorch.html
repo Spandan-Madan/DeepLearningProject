@@ -15421,7 +15421,7 @@ AND, Romance, Fantasy, Family, Music, Adventure, etc co-occur.</p>
 <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Starting pulling movies from TMDB. If you want to debug, uncomment the print command. This will take a while, please wait...&#39;</span><span class="p">)</span>
 <span class="n">done_ids</span><span class="o">=</span><span class="p">[]</span>
 <span class="k">for</span> <span class="n">g_id</span> <span class="ow">in</span> <span class="n">nr_ids</span><span class="p">:</span>
-    <span class="c1">#print(&#39;Pulling movies for genre ID &#39;+g_id)</span>
+    <span class="c1">#print(&#39;Pulling movies for genre ID: {}&#39;.format(g_id))</span>
     <span class="n">baseyear</span> <span class="o">-=</span> <span class="mi">1</span>
     <span class="k">for</span> <span class="n">page</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
         <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
